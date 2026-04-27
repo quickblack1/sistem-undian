@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-
-<head>
-
-
+  <head>
 	</head>
   <body>
     <?php
@@ -30,24 +26,22 @@ function bgChange(bg) {
 <body>
 
 
-<table style="width:50px;height:50px">
-  <tr>
-    <td onmouseover="bgChange(this.style.backgroundColor)" 
-        onmouseout="bgChange(this.style.backgroundColor)"
-        style="background-color:pink">
-    </td>
-    <td onmouseover="bgChange(this.style.backgroundColor)" 
-        onmouseout="bgChange(this.style.backgroundColor)"
-        style="background-color:PaleGreen">
-    </td>
-    <td onmouseover="bgChange(this.style.backgroundColor)" 
-        onmouseout="bgChange(this.style.backgroundColor)"
-        style="background-color:Silver">
-    </td>
-    <h10>👑sila klik warna dibawah untuk tukar warna👑</h10>
-  </tr>
-</table>
-
-
-</body>
+    <table style="width:50px;height:50px">
+      <tr>
+        <td onmouseover="bgChange(this.style.backgroundColor)" 
+            onmouseout="bgChange(this.style.backgroundColor)"
+            style="background-color:pink">
+        </td>
+        <td onmouseover="bgChange(this.style.backgroundColor)" 
+            onmouseout="bgChange(this.style.backgroundColor)"
+            style="background-color:PaleGreen">
+        </td>
+        <td onmouseover="bgChange(this.style.backgroundColor)" 
+            onmouseout="bgChange(this.style.backgroundColor)"
+            style="background-color:Silver">
+        </td>
+        <h10>👑sila klik warna dibawah untuk tukar warna👑</h10>
+      </tr>
+    </table>
+  </body>
 </html>
