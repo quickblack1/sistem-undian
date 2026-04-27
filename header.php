@@ -76,18 +76,20 @@ body {
 
     
     <div class="topnav">
-      <a class="active" href="index.php">HOME</a>
+      <?php $current_page = basename($_SERVER['PHP_SELF']); ?>
+      <a class="<?= ($current_page == 'index.php') ? 'active' : '' ?>" href="index.php">HOME</a>
       <?php
+        
         session_start();
         if (isset($_SESSION["nokp"])){
         ?>
-          <a href="paparsemuacalon.php">PAPAR SEMUA CALON</a>
-          <a href="pilihundi.php">UNDIAN</a>
-          <a href="result.php">KEPUTUSAN UNDIAN</a>
+          <a href="paparsemuacalon.php" class="<?= ($current_page == 'paparsemuacalon.php') ? 'active' : '' ?>">PAPAR SEMUA CALON</a>
+          <a href="pilihundi.php" class="<?= ($current_page == 'pilihundi.php') ? 'active' : '' ?>">UNDIAN</a>
+          <a href="result.php" class="<?= ($current_page == 'result.php') ? 'active' : '' ?>">KEPUTUSAN UNDIAN</a>
           <a href="logout.php">LOGOUT</a>
           
           <div align="center">    
-            <div class="row" style="color: black"><b><i>WELCOME <?php echo $_SESSION['namapengundi']; ?>!<br></i></b></div>
+            <div class="row" style="color: black"><b><i>SELAMAT DATANG<br> <?php echo $_SESSION['namapengundi']; ?></i></b></div>
           </div>
         <?php
         } elseif (isset($_SESSION["idadmin"])){
