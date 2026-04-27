@@ -1,5 +1,5 @@
 <?php
-include("menupengundi.php");
+//include("menupengundi.php");
 require('confiq.php');
 //session_start();
 
@@ -15,6 +15,7 @@ $masa = date("H:i:s");
 
 <html>
   <head>
+    <link rel="stylesheet" href="styles.css">
     <style>
       .div01{
         width: 1000px;
@@ -47,7 +48,8 @@ $masa = date("H:i:s");
       }
     </style>
   </head>
-  <body style="background-color:lightblue;">
+  <body>
+    <?php include('header.php'); ?>
 
     <center>
     <h2>UNDIAN</h2>

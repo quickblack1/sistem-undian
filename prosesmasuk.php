@@ -16,10 +16,10 @@ if ($hasil>0)
 	$row = mysqli_fetch_array($rekod);
 	$_SESSION['namapengundi'] = $row['namapengundi'];
 	$message = "Katalaluan anda sah";
-echo "<script type='text/javascript'>alert('$message');</script>";
+	echo "<script type='text/javascript'>alert('$message');</script>";
 	
-	
-	header('refresh:1;URL=./menupengundi.php');
+	//header('refresh:1;URL=./menupengundi.php');
+	header('Location: index.php');
 }
 else
 {

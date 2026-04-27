@@ -1,15 +1,15 @@
 <?php
 require('confiq.php');
 
-include("menupengundi.php");
+//include("menupengundi.php");
 ?>  
   </style>
 </div>
 <html>
-<head></head>
-  <center>
-
+  <head>
+  </head>
   <body>
+    <?php include('header.php'); ?>
     <h2>MAKLUMAT CALON</h2>
     
     <?php

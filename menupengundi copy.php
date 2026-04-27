@@ -73,6 +73,8 @@ body {
   margin-top: 20px;
 }
 </style>
+</head>
+
 
 <div class="topnav">
   <a class="active" href="">LAMAN UTAMA</a>
@@ -83,8 +85,8 @@ body {
   <a href="logout.php">LOGOUT</a>
  <br>
   <div align="center">    
-    <div class="row" style="color: black"><b><i>WELCOME <?php echo $_SESSION['namapengundi']; ?>!<br></i></b></div>
-      <div id="display-date">
+<div class="row" style="color: black"><b><i>WELCOME <?php echo $_SESSION['namapengundi']; ?>!<br></i></b></div>
+  <div id="display-date">
         <script language="javascript"> 
         today = new Date();
         var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -100,7 +102,7 @@ body {
             </div>
       
 	</center>
-	
+	</head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 

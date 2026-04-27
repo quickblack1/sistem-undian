@@ -73,16 +73,33 @@ body {
   margin-top: 20px;
 }
 </style>
-</head>
 
-
-<div class="topnav">
-  <a class="active" href="index.php">HOME</a>
-  <a href="logmasuk.php">LOGIN PENGGUNA</a>
-  <a href="logmasukadmin.php">LOGIN ADMIN</a>
-  <a href="daftar.php">PENDAFTARAN PENGGUNA BARU</a>
-  
- 
-
-	
-	</center>
+    
+    <div class="topnav">
+      <a class="active" href="index.php">HOME</a>
+      <?php
+        session_start();
+        if (isset($_SESSION["nokp"])){
+        ?>
+          <a href="paparsemuacalon.php">PAPAR SEMUA CALON</a>
+          <a href="pilihundi.php">UNDIAN</a>
+          <a href="result.php">KEPUTUSAN UNDIAN</a>
+          <a href="logout.php">LOGOUT</a>
+          
+          <div align="center">    
+            <div class="row" style="color: black"><b><i>WELCOME <?php echo $_SESSION['namapengundi']; ?>!<br></i></b></div>
+          </div>
+        <?php
+        } elseif (isset($_SESSION["idadmin"])){
+        include("menuadmin.php");
+      } else {
+        ?>
+        <a href="logmasuk.php">LOGIN PENGGUNA</a>
+        <a href="logmasukadmin.php">LOGIN ADMIN</a>
+        <a href="daftar.php">PENDAFTARAN PENGGUNA BARU</a>
+      <?php  
+      } 
+      ?>
+    
+    
+    </div>

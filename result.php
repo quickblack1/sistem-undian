@@ -1,7 +1,11 @@
 <?php
 include('confiq.php');
-include("menupengundi.php");
+//include("menupengundi.php");
 ?>
+<html>
+  <body>
+    <?php include('header.php'); ?>
+
 <h2>Keputusan Undian Terkini</h2>
 <?php
 $sql = "SELECT jawatan
@@ -50,4 +54,5 @@ while($row1 = mysqli_fetch_array($result1)){
 <center>
   <a href="result.php"><button onClick="window.print();">Cetak</button>
   </a>
-  </html>
+  </body>
+</html>
