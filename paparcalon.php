@@ -1,22 +1,13 @@
 <?php
 require('confiq.php');
 ?>
-
-    
-  </style>
-   
-
-</div>
-<html>
-  <head>
-  </head>
-  <body>
+<?php
+    include("header.php");
+?>
   <center>
 <h2>MAKLUMAT CALON</h2>
 
-  <?php
-    include("header.php");
-  ?>
+  
 
 
 <?php

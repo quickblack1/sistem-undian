@@ -1,7 +1,5 @@
 <?php
-//require('db.php');
-include("menuadmin.php");
-
+    include("header.php");
 ?>
 <tr>
 </tr>

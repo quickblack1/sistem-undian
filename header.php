@@ -50,7 +50,7 @@ new google.translate.TranslateElement({pageLanguage: 'ms'}, 'google_translate_el
           <a href="result.php" class="<?= ($current_page == 'result.php') ? 'active' : '' ?>">KEPUTUSAN UNDIAN</a>
           <a href="logout.php">LOGOUT</a>
           
-          <div align="center">    
+          <div align="center">
             <div class="row" style="color: black"><b><i>SELAMAT DATANG<br> <?php echo $_SESSION['namapengundi']; ?></i></b></div>
           </div>
         <?php
@@ -65,7 +65,7 @@ new google.translate.TranslateElement({pageLanguage: 'ms'}, 'google_translate_el
             <a href="logoutadmin.php">LOGOUT</a>
  
             <div align="center">    
-              <div class="row" style="color: black"><b><i>SELAMAT DATANG<br>ADMIN:  <?php echo $_SESSION['namaadmin']; ?></i></b></div>
+              <div><b><i>SELAMAT DATANG<br>ADMIN:  <?php echo $_SESSION['namaadmin']; ?></i></b></div>
             </div>    
         <?php
       } else {
