@@ -7,9 +7,6 @@ require('confiq.php');
   <center>
 <h2>MAKLUMAT CALON</h2>
 
-  
-
-
 <?php
 
 $query="SELECT * FROM calon";
