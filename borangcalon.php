@@ -45,34 +45,27 @@ kalau English gunakan 'en'
 
 
     <link rel="stylesheet" type="text/css" href="style.css">
-	<style>
-    body
-    {
-        background-color:  lightyellow;
-    }
-  </style>
-
-</head>
-<body>
-    <?php
-    include("header.php");
-    ?>
-     
-<?php
-//include("authadmin.php");
-?>
-<table width='35%' align='center'>
-    <tr>
-        <td align='right' bgcolor='#85C1E9'>No. KP Calon: </td>
-        <td>
-            <form action="" method="get">
-                <input type='text' name='nokp' placeholder='sila masukkan no. kp calon' required>
-                <button type="submit">Cari</button>
-                <?php echo $alert; ?>
-            </form>
-        </td>
-    </tr>
-</table>
+	
+    </head>
+    <body>
+        <?php
+        include("header.php");
+        ?>
+        <?php
+        //include("authadmin.php");
+        ?>
+        <table width='35%' align='center'>
+            <tr>
+                <td align='right' bgcolor='#85C1E9'>No. KP Calon: </td>
+                <td>
+                    <form action="" method="get">
+                        <input type='text' name='nokp' placeholder='sila masukkan no. kp calon' required>
+                        <button type="submit">Cari</button>
+                        <?php echo $alert; ?>
+                    </form>
+                </td>
+            </tr>
+        </table>
 
 
 

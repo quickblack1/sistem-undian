@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html>
-
-
-<head>
-
-
-	</head>
-  <body>
     <?php
       include("header.php");
     ?>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	
     <center>
 <img src="imej/vote.png" style="width:150px; height:150px;">
         <h2><p style="font-family:algerian">SISTEM E-VOTE</p></h2>
@@ -25,9 +16,6 @@ function bgChange(bg) {
     document.body.style.background = bg;
 }
 </script>
-</head>
-
-<body>
 
 
 <table style="width:50px;height:50px">

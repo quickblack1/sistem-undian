@@ -1,7 +1,13 @@
-<center>
-	<title>Laman Utama</title>
-	<img src="imej/banner.png" style="width:100%; height:200px;">
-	<div id="google_translate_element"></div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sistem Undian</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  
+  <body>
+	  <img src="imej/banner.png" style="width:100%; height:200px;">
+	  <div id="google_translate_element"></div>
 
 
 <!-- letak kod ni sebelum tutup </body> -->
@@ -30,51 +36,7 @@ new google.translate.TranslateElement({pageLanguage: 'ms'}, 'google_translate_el
         document.write(today.getDate() + " " + month[today.getMonth()] + " " + yr);
         </script>
 </div>
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-image: url("bg.jpeg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
 
-.topnav {
-  overflow: hidden;
-  background-color: lightblue;
-}
-
-.topnav a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: red;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: lavender;
-  color: black;
-}
-
-.welcome {
-
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 100px;
-  margin-top: 20px;
-}
-</style>
-
-    
     <div class="topnav">
       <?php $current_page = basename($_SERVER['PHP_SELF']); ?>
       <a class="<?= ($current_page == 'index.php') ? 'active' : '' ?>" href="index.php">HOME</a>
@@ -103,7 +65,7 @@ body {
             <a href="logoutadmin.php">LOGOUT</a>
  
             <div align="center">    
-              <div class="row" style="color: black"><b><i>WELCOME ADMIN:  <?php echo $_SESSION['namaadmin']; ?><br></i></b>
+              <div class="row" style="color: black"><b><i>WELCOME ADMIN:  <?php echo $_SESSION['namaadmin']; ?></i></b>
             </div>    
         <?php
       } else {
