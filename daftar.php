@@ -2,9 +2,9 @@
  <head>
 </head>
  <body>
-<?php
-      include_once("header.php");
-    ?>
+  <?php
+      include("header.php");
+  ?>
   <body style="background-color:lightblue;"> 
   <br>
   <br> 

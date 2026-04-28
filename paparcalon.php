@@ -1,7 +1,5 @@
 <?php
 require('confiq.php');
-
-include("menuadmin.php");
 ?>
 
     
@@ -10,11 +8,15 @@ include("menuadmin.php");
 
 </div>
 <html>
-<head>
+  <head>
+  </head>
+  <body>
   <center>
 <h2>MAKLUMAT CALON</h2>
-<body>
 
+  <?php
+    include("header.php");
+  ?>
 
 
 <?php

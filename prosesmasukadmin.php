@@ -22,7 +22,7 @@ if ($hasil==1){
 	echo "<script type='text/javascript'>alert('$message');</script>";
 	
 	
-	header('refresh:1;URL=./menuadmin.php');
+	header('Location: index.php');
 } else {
 	$message1 = "Katalaluan anda tidak sah";
 	echo "<script type='text/javascript'>alert('$message1');</script>";

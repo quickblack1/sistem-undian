@@ -1,15 +1,17 @@
 <?php
 //include auth.php file on all secure pages
 //include("authadmin.php");
-include("menuadmin.php");
+
 require('confiq.php');
+$alert = "";
+$namaCalon = "";
 if (isset($_GET['nokp'])){
     $nokp = $_GET['nokp'];
     //echo $nokp;
     $sql = "SELECT * FROM pengundi WHERE nokp = '$nokp'";
     $result = mysqli_query($con, $sql);
     $rowCount = mysqli_num_rows($result);
-    $alert = "";
+    
     if ($rowCount != 0){
         while ($row = mysqli_fetch_array($result)){
             $namaCalon = $row['namapengundi'];
@@ -52,10 +54,10 @@ kalau English gunakan 'en'
 
 </head>
 <body>
-</center>
-
-    
-            
+    <?php
+    include("header.php");
+    ?>
+     
 <?php
 //include("authadmin.php");
 ?>

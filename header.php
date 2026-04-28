@@ -78,8 +78,8 @@ body {
     <div class="topnav">
       <?php $current_page = basename($_SERVER['PHP_SELF']); ?>
       <a class="<?= ($current_page == 'index.php') ? 'active' : '' ?>" href="index.php">HOME</a>
+      
       <?php
-        
         session_start();
         if (isset($_SESSION["nokp"])){
         ?>
@@ -93,7 +93,19 @@ body {
           </div>
         <?php
         } elseif (isset($_SESSION["idadmin"])){
-        include("menuadmin.php");
+          ?>
+            <a href="borangcalon.php" class="<?= ($current_page == 'borangcalon.php') ? 'active' : '' ?>">TAMBAH CALON</a>
+            <a href="paparcalon.php" class="<?= ($current_page == 'paparcalon.php') ? 'active' : '' ?>">PAPAR CALON</a>
+            <a href="cariadmin.php" class="<?= ($current_page == 'cariadmin.php') ? 'active' : '' ?>">CARIAN/KEMASKINI CALON</a>
+            <a href="cariundi.php" class="<?= ($current_page == 'cariundi.php') ? 'active' : '' ?>">CARIAN/PADAM UNDIAN</a>
+            <a href="laporan.php" class="<?= ($current_page == 'laporan.php') ? 'active' : '' ?>">LAPORAN</a>
+            <a href="import.php" class="<?= ($current_page == 'import.php') ? 'active' : '' ?>">IMPORT CALON</a>
+            <a href="logoutadmin.php">LOGOUT</a>
+ 
+            <div align="center">    
+              <div class="row" style="color: black"><b><i>WELCOME ADMIN:  <?php echo $_SESSION['namaadmin']; ?><br></i></b>
+            </div>    
+        <?php
       } else {
         ?>
         <a href="logmasuk.php">LOGIN PENGGUNA</a>
