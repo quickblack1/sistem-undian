@@ -65,7 +65,7 @@ new google.translate.TranslateElement({pageLanguage: 'ms'}, 'google_translate_el
             <a href="logoutadmin.php">LOGOUT</a>
  
             <div align="center">    
-              <div class="row" style="color: black"><b><i>WELCOME ADMIN:  <?php echo $_SESSION['namaadmin']; ?></i></b>
+              <div class="row" style="color: black"><b><i>SELAMAT DATANG<br>ADMIN:  <?php echo $_SESSION['namaadmin']; ?></i></b></div>
             </div>    
         <?php
       } else {
