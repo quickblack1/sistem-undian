@@ -57,11 +57,10 @@
 
 
  
-  <td><input name="submit" value="daftar" type="submit" style="background-color:black;color:white;width:150px;
-height:40px;">
+  <td><input name="submit" value="Daftar" type="submit">
 
 </td>
-<td> <input type='reset' value='Padam' style="background-color:black;color:white;width:150px;height:40px;"></td>
+<td> <input type='reset' value='Padam' ></td>
 
 
   </tr>
