@@ -12,9 +12,9 @@
  			</tr>
  			<tr>
  				<td>
- 				<img src="imej/logo.png" width="280" height="200" title="logo" alt="logo" /></td>
+ 				<img src="imej/login-user.png" width="" height="" title="logo" alt="logo" /></td>
 
- 				<td width="50%">
+ 				<td>
  					<table>
  					</tr>
  					<td>Nombor Kad Pengenalan</td>

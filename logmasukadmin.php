@@ -1,14 +1,8 @@
-<html>
- <head>
- 	<title>Log in</title>	
- </head>
- <body>
 	<?php
       include_once("header.php");
     ?>
   <br>
   <br>
- <body style="background-color:powderblue;"> 
  	<form action ="prosesmasukadmin.php" method="POST">
  		<center>
  		<table border ="1">
@@ -18,7 +12,7 @@
  			</tr>
  			<tr>
  				<td>
- 				<img src="logo.jpeg" width="280" height="200" title="logo" alt="logo" /></td>
+ 				<img src="imej/logo.jpeg" width="280" height="200" title="logo" alt="logo" /></td>
 
  				<td width="50%">
  					<table>
