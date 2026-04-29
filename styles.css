@@ -1,15 +1,15 @@
 body{
     margin: 0;
-    background-color:white;
+    /* background-color:rgb(236, 85, 160); */
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url("Blue flower.jpg");
+    background-image: url("imej/background.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
 .topnav {
   overflow: hidden;
-  background-color:cyan;
+  background-color:rgb(71, 214, 126);
 }
 
 .topnav a {
@@ -22,12 +22,12 @@ body{
 }
 
 .topnav a:hover {
-  background-color: red;
+  background-color: rgb(77, 48, 218);
   color: black;
 }
 
 .topnav a.active {
-  background-color: lavender;
+  background-color: rgb(208, 220, 40);
   color: black;
 }
 

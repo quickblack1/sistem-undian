@@ -1,14 +1,8 @@
-<html>
- <head>
- 	<title>Log in</title>	
- </head>
- <body>
 	<?php
       include("header.php");
     ?>
  	  <br>
   <br>
- <body style="background-color:powderblue;"> 
  	<form action ="prosesmasuk.php" method="POST">
  		<center>
  		<table border ="1">
