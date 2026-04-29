@@ -1,11 +1,7 @@
-<html>
- <head>
-</head>
- <body>
   <?php
       include("header.php");
   ?>
-  <body style="background-color:lightblue;"> 
+  
   <br>
   <br> 
   <form action ="prosesdaftar.php" method="POST">
