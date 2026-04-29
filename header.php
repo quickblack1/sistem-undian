@@ -6,7 +6,7 @@
   </head>
   
   <body>
-	  <img src="imej/banner.png" style="width:100%; height:200px;">
+	  <img src="imej/banner.png" style="width:100%;">
 	  <div id="google_translate_element"></div>
 
 
