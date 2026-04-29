@@ -70,9 +70,9 @@ new google.translate.TranslateElement({pageLanguage: 'ms'}, 'google_translate_el
         <?php
       } else {
         ?>
-        <a href="logmasuk.php">LOGIN PENGGUNA</a>
-        <a href="logmasukadmin.php">LOGIN ADMIN</a>
-        <a href="daftar.php">PENDAFTARAN PENGGUNA BARU</a>
+        <a href="logmasuk.php" class="<?= ($current_page == 'logmasuk.php') ? 'active' : '' ?>">LOGIN PENGGUNA</a>
+        <a href="logmasukadmin.php" class="<?= ($current_page == 'logmasukadmin.php') ? 'active' : '' ?>">LOGIN ADMIN</a>
+        <a href="daftar.php" class="<?= ($current_page == 'daftar.php') ? 'active' : '' ?>">PENDAFTARAN PENGGUNA BARU</a>
       <?php  
       } 
       ?>
