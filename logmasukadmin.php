@@ -12,9 +12,9 @@
  			</tr>
  			<tr>
  				<td>
- 				<img src="imej/logo.jpeg" width="280" height="200" title="logo" alt="logo" /></td>
+ 				<img src="imej/login-admin.png" width="" height="" title="logo" alt="logo" /></td>
 
- 				<td width="50%">
+ 				<td>
  					<table>
  					</tr>
  					<td>ID ADMIN</td>

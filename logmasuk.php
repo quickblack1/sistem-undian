@@ -12,7 +12,7 @@
  			</tr>
  			<tr>
  				<td>
- 				<img src="imej/login-user.png" width="" height="" title="logo" alt="logo" /></td>
+ 				<img src="imej/login-admin.png" width="" height="" title="logo" alt="logo" /></td>
 
  				<td>
  					<table>
