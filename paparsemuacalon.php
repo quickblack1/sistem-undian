@@ -3,14 +3,9 @@ require('confiq.php');
 
 //include("menupengundi.php");
 ?>  
-  </style>
-</div>
-<html>
-  <head>
-  </head>
-  <body>
-    <?php include('header.php'); ?>
-    <h2>MAKLUMAT CALON</h2>
+<?php include('header.php'); ?>
+<div class="div0">
+  <h2>MAKLUMAT CALON</h2>
     
     <?php
     $sql1 = "SELECT jawatan
@@ -25,7 +20,7 @@ require('confiq.php');
       $query="SELECT * FROM calon WHERE jawatan = '$jawatan'";
       $result=mysqli_query($con, $query);
 
-      echo "<table border='1' cellpadding='2' cellspacing='2'>";
+      echo "<table border='1' cellpadding='2' cellspacing='2' class='table0'>";
     echo "<tr bgcolor='pink' align='center'>
     <style>
           table {
@@ -77,9 +72,12 @@ require('confiq.php');
     <br>
     <br>
     <div>
-    <center>
+    
       <a href="paparcalon.php"><button onClick="window.print();">Cetak</button>
       </a>
-      </center> 
+      
+
+</div>
+    
   </body>
 </html>

@@ -2,11 +2,10 @@
 include('confiq.php');
 //include("menupengundi.php");
 ?>
-<html>
-  <body>
-    <?php include('header.php'); ?>
 
-<h2>Keputusan Undian Terkini</h2>
+    <?php include('header.php'); ?>
+<div class="div0">
+  <h2>Keputusan Undian Terkini</h2>
 <?php
 $sql = "SELECT jawatan
         FROM undian
@@ -27,7 +26,7 @@ while($row1 = mysqli_fetch_array($result1)){
   $result = mysqli_query($con, $query);
   ?>
 
-<table border='1' cellpadding='5'>
+<table border='1' cellpadding='5' class="table0">
   <tr>
     <th>Nama Calon</th>
     <th>Jumlah Undi</th>
@@ -47,12 +46,13 @@ while($row1 = mysqli_fetch_array($result1)){
 
   ?>
   </table>
-  <br><br>
+  <br>
 <?php
 }
 ?>
-<center>
   <a href="result.php"><button onClick="window.print();">Cetak</button>
   </a>
+</div>
+
   </body>
 </html>

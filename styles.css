@@ -1,3 +1,10 @@
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
+
 body{
     margin: 0;
     /* background-color:rgb(236, 85, 160); */
@@ -7,6 +14,43 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
+
+/* untuk edit butang */
+button{
+  background-color:black;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  color:white;
+  padding: 10px;
+  width:auto;
+  height:auto;
+  cursor: pointer;
+}
+button:hover{
+  background-color: rgb(255, 0, 0);
+  border: 1px solid rgb(231, 153, 153);
+  font-weight: bold;
+}
+
+.div0{
+  text-align: center;
+}
+
+input{
+  padding: 5px;
+}
+
+.table0{
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid red;
+}
+
+td{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .topnav {
   overflow: hidden;
   background-color:rgb(71, 214, 126);
@@ -40,12 +84,4 @@ body{
   background-color: red;
 }
 
-input[type=button], input[type=submit], input[type=reset] {
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-}
+

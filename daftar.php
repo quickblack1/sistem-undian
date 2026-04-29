@@ -51,24 +51,20 @@
       </select>
     </td>
   </tr>
+  
   <tr>
- 
-
-
-
- 
-  <td><input name="submit" value="Daftar" type="submit">
-
-</td>
-<td> <input type='reset' value='Padam' ></td>
-
-
+    <td>
+      
+    </td>
+    <td>
+      <button name="submit" type="submit">Daftar</button>
+      <button type='reset'>Reset</button>
+    </td>
   </tr>
   </table>
   </td>
   </tr><tr>
-  <td><button onclick="window.location.href='index.php'" style="background-color:black;color:white;width:150px;
-height:40px;">Kembali</button></td>
+  <td><button onclick="window.location.href='index.php'">Kembali</button></td>
  </table>
  <center>
  
