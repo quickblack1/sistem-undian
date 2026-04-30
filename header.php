@@ -6,25 +6,25 @@
   </head>
   
   <body>
-	  <img src="imej/banner.png" style="width:100%;">
+	  <img class="img0" src="imej/banner.png">
 	  <div id="google_translate_element"></div>
 
 
-<!-- letak kod ni sebelum tutup </body> -->
-<!-- 
-perhatikan bahagian pageLanguage: 'ms', 
-kalau bahasa utama laman web ialah 
-Bahasa Malaysia gunakan 'ms', 
-kalau English gunakan 'en' 
--->
+    <!-- letak kod ni sebelum tutup </body> -->
+    <!-- 
+    perhatikan bahagian pageLanguage: 'ms', 
+    kalau bahasa utama laman web ialah 
+    Bahasa Malaysia gunakan 'ms', 
+    kalau English gunakan 'en' 
+    -->
 
-<script type="text/javascript">
-function googleTranslateElementInit() {
-new google.translate.TranslateElement({pageLanguage: 'ms'}, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<div id="display-date">
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ms'}, 'google_translate_element');
+    }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <div id="display-date">
         <script language="javascript"> 
         today = new Date();
         var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -35,7 +35,7 @@ new google.translate.TranslateElement({pageLanguage: 'ms'}, 'google_translate_el
         if(yr < 1900) yr += 1900;
         document.write(today.getDate() + " " + month[today.getMonth()] + " " + yr);
         </script>
-</div>
+    </div>
 
     <div class="topnav">
       <?php $current_page = basename($_SERVER['PHP_SELF']); ?>
@@ -76,6 +76,4 @@ new google.translate.TranslateElement({pageLanguage: 'ms'}, 'google_translate_el
       <?php  
       } 
       ?>
-    
-    
     </div>

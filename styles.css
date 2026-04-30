@@ -36,6 +36,10 @@ button:hover{
   text-align: center;
 }
 
+.img0{
+  width:100%;
+}
+
 input{
   padding: 5px;
 }
