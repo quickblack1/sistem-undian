@@ -39,5 +39,6 @@ function bgChange(bg) {
 
 </div>
 
-</body>
-</html>
+<?php
+include("footer.php");
+?>
