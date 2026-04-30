@@ -2,8 +2,8 @@
       include("header.php");
     ?>
 	
-    <center>
-<img src="imej/vote.png" style="width:150px; height:150px;">
+<div class="div0">
+    <img src="imej/vote.png" style="width:150px; height:150px;">
         <h2><p style="font-family:algerian">SISTEM E-VOTE</p></h2>
 	<p>
 <p style="font-family:century gothic">
@@ -18,7 +18,7 @@ function bgChange(bg) {
 </script>
 
 
-<table style="width:50px;height:50px">
+<table class="table0" style="">
   <tr>
     <td onmouseover="bgChange(this.style.backgroundColor)" 
         onmouseout="bgChange(this.style.backgroundColor)"
@@ -36,6 +36,8 @@ function bgChange(bg) {
   </tr>
 </table>
 
+
+</div>
 
 </body>
 </html>

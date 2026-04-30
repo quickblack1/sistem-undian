@@ -29,7 +29,7 @@ button{
 button:hover{
   background-color: rgb(255, 0, 0);
   border: 1px solid rgb(231, 153, 153);
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .div0{
