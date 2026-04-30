@@ -26,10 +26,11 @@
  				<td> <input name= "katalaluanadmin" size="15" type="password"></td>
  				</tr>
  				<tr>
- 					<td><input name="submit" value="Login" type="submit" style="background-color:black;color:white;width:150px;
-height:40px;"></td>
-<td> <input type='reset' value='Padam' style="background-color:black;color:white;width:150px;
-height:40px;"></td>
+ 					<td></td>
+	<td>
+		<button name="submit" type="submit">Login</button>
+		<button type='reset'>Reset</button>
+	</td>
 
 <tr>
 
