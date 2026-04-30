@@ -22,7 +22,7 @@
  					
  				</tr>
  				<tr>
- 				<td>Katalaluan</td>
+ 				<td>Kata laluan</td>
  				<td> <input name= "katalaluanpengundi" size="15" type="password"></td>
  				</tr>
  				<tr>
