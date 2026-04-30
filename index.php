@@ -1,7 +1,7 @@
     <?php
       include("header.php");
     ?>
-	
+	<br>
 <div class="div0">
     <img src="imej/vote.png" style="width:150px; height:150px;">
         <h2><p style="font-family:algerian">SISTEM E-VOTE</p></h2>
@@ -18,7 +18,7 @@ function bgChange(bg) {
 </script>
 
 
-<table class="table0" style="">
+<table class="table1">
   <tr>
     <td onmouseover="bgChange(this.style.backgroundColor)" 
         onmouseout="bgChange(this.style.backgroundColor)"
