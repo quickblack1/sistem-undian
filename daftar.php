@@ -167,5 +167,6 @@ function togglePass() {
  
  
 </form>
-</body>
-</html>
+<?php
+include("footer.php");
+?>

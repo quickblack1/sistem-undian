@@ -62,13 +62,40 @@ button:hover{
   width:100%;
 }
 
+.div2{
+  text-align: center;
+  border: 2px solid red;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 100px;
+  margin-right: 100px;
+  background-color: rgba(240, 248, 255, 0.5);
+}
+
 .img0{
   width:100%;
+}
+
+.img1{
+  display:block;
+  margin:5px auto;
+  border:3px solid purple;
 }
 
 input{
   padding: 5px;
   width: 200px;
+}
+
+.label0{
+  display:inline-block;
+  text-align:center;
+  margin:10px;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  max-width: 200px;
 }
 
 .span0{

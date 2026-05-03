@@ -78,6 +78,7 @@ require('confiq.php');
       
 
 </div>
-    
-  </body>
-</html>
+
+<?php
+include("footer.php");
+?>

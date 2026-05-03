@@ -13,47 +13,12 @@ $tarikh = date("Y-m-d");
 $masa = date("H:i:s");
 ?>
 
-<html>
-  <head>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-      .div01{
-        width: 1000px;
-        margin-top: 0px;
-        margin-bottom: 20px;
-        margin-right: auto;
-        margin-left: auto;
-        border: 1px solid black;
-        padding-top: 0px;
-        padding-right: 30px;
-        padding-bottom: 10px;
-        padding-left: 80px;
-      }
-      .a01{
-        width: 300px;
-        background-color:red;
-        color:white;
-        padding:10px 30px;
-        border-radius: 8px;
-        text-decoration-line: none;
-      }
-      .a01:hover{
-        text-decoration-line: underline;
-      }
-      tr{
 
-      }
-      td{
-        border: 0px solid black;
-      }
-    </style>
-  </head>
-  <body>
-    <?php include('header.php'); ?>
+<?php include('header.php'); ?>
 
-    <center>
-    <h2>UNDIAN</h2>
-    <table>
+<div class="div0">
+  <h2>UNDIAN</h2>
+    <table class="table0">
         
         <tr>
           <td align="right">Tarikh:</td>
@@ -68,11 +33,13 @@ $masa = date("H:i:s");
           </td>
         </tr>
     </table>
-    </center>
+</div>
+    
+    
 
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <center>
+    
     <?php 
     $sql1 = "SELECT jawatan
             FROM calon
@@ -81,7 +48,7 @@ $masa = date("H:i:s");
     while($row1 = mysqli_fetch_array($result1)){
       $jawatan = $row1['jawatan'];
       ?>
-      <div class="div01">
+      <div class="div2">
         <h3>Jawatan: <?php echo $jawatan; ?></h3>
         <form action="masukundi.php" method="GET" enctype="multipart/form-data">
           <input type="hidden" name="nokp" value="<?php echo $nokp; ?>">
@@ -97,14 +64,14 @@ $masa = date("H:i:s");
                   $result = mysqli_query($con, $query);
 
                   while($data = mysqli_fetch_array($result)){
-                    echo "<label style='display:inline-block; text-align:center; margin:10px; border: 1px solid black; padding: 5px;'>
-                        <input type='radio' name='idcalon' value='".$data['idcalon']."' required><br>
-                        <img src='".$data['gambar']."' width='80' height='100' 
-                            style='display:block; margin:5px auto; border:3px solid #000;'><br>
-                        ".$data['namacalon']."
-                      </label>";
-                  ?>
-                  <?php
+                    
+                    ?>
+                    <label class="label0">
+                            <input type='radio' name='idcalon' value="<?php echo $data['idcalon']; ?>" required><br>
+                            <img class="img1" src="<?php echo $data['gambar']; ?>" width='80' height='100'><br>
+                            <?php echo $data['namacalon']; ?>
+                          </label>
+                    <?php
                   }
                   ?>
                 </td>
@@ -118,8 +85,7 @@ $masa = date("H:i:s");
                   $rowcount = mysqli_num_rows($result);
                   if ($rowcount == 0){
                     ?>
-                    <input type="submit" value="UNDI" name="submit" 
-                    style="background-color:red; color:white; padding:10px 30px; border-radius:8px; cursor:pointer;">
+                    <button type="submit" name="submit">UNDI</button>
                     <?php
                   } else {
                     ?>
@@ -136,6 +102,7 @@ $masa = date("H:i:s");
       <?php
     }
     ?>
-    </center>
-  </body>
-</html>
+    
+<?php
+include("footer.php");
+?>
