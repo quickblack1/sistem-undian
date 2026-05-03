@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 26, 2026 at 07:00 PM
+-- Generation Time: May 03, 2026 at 02:46 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -73,7 +73,7 @@ INSERT INTO `calon` (`idcalon`, `nokp`, `namacalon`, `idadmin`, `gambar`, `jawat
 CREATE TABLE `pengundi` (
   `nokp` varchar(12) NOT NULL,
   `namapengundi` varchar(50) NOT NULL,
-  `katalaluanpengundi` varchar(8) NOT NULL,
+  `katalaluanpengundi` varchar(20) NOT NULL,
   `kelas` varchar(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -83,6 +83,7 @@ CREATE TABLE `pengundi` (
 
 INSERT INTO `pengundi` (`nokp`, `namapengundi`, `katalaluanpengundi`, `kelas`) VALUES
 ('090911101905', 'DANIEL AQASHA BIN MOHD SARUL', '123', '5H'),
+('1', '1', 'najmee@1987', '5D'),
 ('123456789012', 'Hasimah', '123', ''),
 ('760404085402', 'NOOR HIDAYAH', '123', ''),
 ('760404085403', 'Hasimah', '', ''),

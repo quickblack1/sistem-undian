@@ -54,10 +54,7 @@ $masa = date("H:i:s");
     <center>
     <h2>UNDIAN</h2>
     <table>
-        <tr>
-          <td align="right">Nombor Kad Pengenalan:</td>
-          <td><?php echo $nokp; ?></td>
-        </tr>
+        
         <tr>
           <td align="right">Tarikh:</td>
           <td>

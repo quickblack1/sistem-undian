@@ -1,10 +1,107 @@
   <?php
-      include("header.php");
+    //connection
+    require('confiq.php');
+
+    if (isset($_POST['submit'])){
+      
+      
+
+      //sql buat query
+      $nokp=$_POST['nokp'];
+      $namapengundi=$_POST['namapengundi'];
+      $katalaluanpengundi=$_POST['katalaluanpengundi'];
+      $kelas = $_POST['kelas'];
+      //$alert = "";
+
+      $query="INSERT INTO pengundi(nokp,namapengundi,katalaluanpengundi, kelas) VALUES('$nokp','$namapengundi','$katalaluanpengundi', '$kelas');";
+      $result = mysqli_query($con,$query);
+          //run query
+          if($result == 1){
+            echo "di sini";
+            exit();
+              echo"<script>alert('Pendaftaran Anda Berjaya'); window.location.href='logmasuk.php'; </script>";
+          } else {
+            echo "di sini2";
+            exit();
+              echo"<script>alert('Nombor Kad Pengenalan telah wujud'); window.location.href='daftar.php'; </script>";
+          }
+
+      //tutup connection
+      mysqli_close($con);
+
+      /* if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d).{8,}$/', $katalaluanpengundi)) {
+          ?>
+          <script>
+              document.getElementById('password').focus();
+          </script>
+          <?php
+          $alert = "Kata laluan mesti sekurang-kurangnya 8 aksara serta gabungan huruf, simbol dan nombor!";
+      } else {
+          $query="INSERT INTO pengundi(nokp,namapengundi,katalaluanpengundi, kelas) VALUES('$nokp','$namapengundi','$katalaluanpengundi', '$kelas');";
+          //run query
+          if(mysqli_query($con,$query)){
+              echo"<script>alert('Pendaftaran Anda Berjaya'); window.location.href='logmasuk.php'; </script>";
+          } else {
+              echo"<script>alert('Nombor Kad Pengenalan telah wujud'); window.location.href='daftar.php'; </script>";
+          } 
+      } */
+		}
+    
+    include("header.php");
   ?>
+
+<script>
+function validateForm() {
+    let pass = document.getElementById("password").value;
+    let error = document.getElementById("error");
+
+    // reset error
+    error.innerText = "";
+
+    // 1. semak panjang
+    if (pass.length < 8) {
+        error.innerText = "Kata laluan mesti sekurang-kurangnya 8 aksara.";
+        document.getElementById("password").focus();
+        return false;
+    }
+
+    // 2. semak huruf
+    if (!/[A-Za-z]/.test(pass)) {
+        error.innerText = "Kata laluan mesti ada huruf.";
+        document.getElementById("password").focus();
+        return false;
+    }
+
+    // 3. semak nombor
+    if (!/[0-9]/.test(pass)) {
+        error.innerText = "Kata laluan mesti ada nombor";
+        document.getElementById("password").focus();
+        return false;
+    }
+
+    // 4. semak simbol
+    if (!/[^A-Za-z0-9]/.test(pass)) {
+        error.innerText = "Kata laluan mesti ada simbol.";
+        document.getElementById("password").focus();
+        return false;
+    }
+    return true;
+}
+
+function togglePass() {
+    let pass = document.getElementById("password");
+
+    if (pass.type === "password") {
+        pass.type = "text";
+    } else {
+        pass.type = "password";
+    }
+}
+</script>
   
   <br>
   <br> 
-  <form action ="prosesdaftar.php" method="POST">
+  <form onsubmit="return validateForm()" action="" method="POST">
     <center>
   <table border ="0">
   <tr>
@@ -32,8 +129,12 @@
   
  
   <tr>
-    <td style="background-color: orange;"align="center">Katalaluan</td>
-    <td> <input name= "katalaluanpengundi" size="15" type="password" placeholder='katalaluan' required></td>
+    <td style="background-color: orange;"align="center">Kata laluan</td>
+    <td>
+      <input id="password" name="katalaluanpengundi" size="15" type="password" placeholder='kata laluan' required>
+      <button class="button0" type="button" onclick="togglePass()">👁</button><br>
+      <span id="error" class='span0'></span>
+    </td>
   </tr>
   <tr>
     <td style="background-color: orange;"align="center">Kelas</td>
