@@ -22,7 +22,7 @@
  					
  				</tr>
  				<tr>
- 				<td>KATALALUAN</td>
+ 				<td>KATA LALUAN</td>
  				<td> <input name= "katalaluanadmin" size="15" type="password"></td>
  				</tr>
  				<tr>
@@ -44,8 +44,6 @@
  	</tr>
  </table>
 </form>
-</body>
-</html>
-
-
-
+<?php
+include("footer.php");
+?>

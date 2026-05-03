@@ -17,12 +17,8 @@
       $result = mysqli_query($con,$query);
           //run query
           if($result == 1){
-            echo "di sini";
-            exit();
               echo"<script>alert('Pendaftaran Anda Berjaya'); window.location.href='logmasuk.php'; </script>";
           } else {
-            echo "di sini2";
-            exit();
               echo"<script>alert('Nombor Kad Pengenalan telah wujud'); window.location.href='daftar.php'; </script>";
           }
 

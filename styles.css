@@ -54,9 +54,12 @@ button:hover{
 
 .div1{
   margin-top: 10px;
+  margin-bottom: 10px;
   padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
-  border-top: 3px solid rebeccapurple;
+  border-top: 2px solid rebeccapurple;
+  width:100%;
 }
 
 .img0{
