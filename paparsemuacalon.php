@@ -19,46 +19,28 @@ require('confiq.php');
       <?php
       $query="SELECT * FROM calon WHERE jawatan = '$jawatan'";
       $result=mysqli_query($con, $query);
-
-      echo "<table border='1' cellpadding='2' cellspacing='2' class='table0'>";
-    echo "<tr bgcolor='pink' align='center'>
-    <style>
-          table {
-            border-collapse: collapse;
-            table-layout: fixed;
-            width: 400px;
-          }
-          table td {
-            border: solid 1px #666;
-            width: 200px;
-            word-wrap: break-word;
-          }
-        </style>
-
-          <td> <b> ID Calon</b> </td>
-          <td> <b> Nama Calon</b> </td>
-              <td><b>gambar </b></td>
-              
-
-        </tr>";
-        WHILE($rekod=mysqli_fetch_array($result))
-    {
-      
-
-      echo "<tr align='center'>
-            <td>{$rekod["idcalon"]}</td>
-            <td>{$rekod["namacalon"]}</td>
-            <td><img src='{$rekod["gambar"]}' ></td>
+      ?>
+      <table class='table0'>
+        <tr>
+          <th> <b> ID Calon</b> </td>
+          <th> <b> Nama Calon</b> </td>
+          <th><b>Gambar </b></td>
+        </tr>
+        <?php
+      while($rekod=mysqli_fetch_array($result)){
+        ?>
+        <tr align='center'>
+          <td><?php echo $rekod["idcalon"]; ?></td>
+          <td><?php echo $rekod["namacalon"]; ?></td>
+          <td><img src='<?php echo $rekod["gambar"]; ?>' ></td>
           <td><a href='pilihundi.php'><button>UNDI</button></a></td>
-                  
-          </tr>";
-          
+        </tr>
+        <?php
+      }
+      ?>
+    </table>
+    <?php
     }
-    echo "</table>";
-
-    }
-    
-
     ?>
 
     

@@ -106,18 +106,50 @@ input{
 .table0{
   margin-left: auto;
   margin-right: auto;
+  border-collapse: collapse;
   /* border: 1px solid red; */
 }
+
+th{
+  background-color: pink;
+  text-align: center;
+  border-color: rgb(227, 25, 25);
+  border-width: 1px;
+  border-style: solid;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+tr{
+  border-width: 0px;
+}
+
+.table0 td{
+  /* border: 1px solid red; */
+  padding-left: 10px;
+  padding-right: 10px;
+  border-color: rgb(227, 25, 25);
+  border-width: 1px;
+  border-style: solid;
+}
+
 .table1{
+  
   margin-left: auto;
   margin-right: auto;
   /* border: 1px solid red; */
   height: 30px;
 }
 
+
+
 td{
+  border: 1px solid red;
   padding-left: 10px;
   padding-right: 10px;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
 }
 
 .topnav {
