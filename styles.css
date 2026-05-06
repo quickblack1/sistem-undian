@@ -71,6 +71,7 @@ button:hover{
   margin-left: 100px;
   margin-right: 100px;
   background-color: rgba(240, 248, 255, 0.5);
+  padding-top: 3px;
 }
 
 .img0{
@@ -110,7 +111,7 @@ input{
   /* border: 1px solid red; */
 }
 
-th{
+.table0 th{
   background-color: pink;
   text-align: center;
   border-color: rgb(227, 25, 25);
@@ -141,15 +142,9 @@ tr{
   height: 30px;
 }
 
-
-
-td{
-  border: 1px solid red;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-color: black;
-  border-width: 1px;
-  border-style: solid;
+.table2{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .topnav {

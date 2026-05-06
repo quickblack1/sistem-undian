@@ -18,7 +18,7 @@ $masa = date("H:i:s");
 
 <div class="div0">
   <h2>UNDIAN</h2>
-    <table class="table0">
+    <table class="table2">
         
         <tr>
           <td align="right">Tarikh:</td>
