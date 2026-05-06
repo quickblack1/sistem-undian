@@ -48,7 +48,7 @@ require('confiq.php');
       echo "<tr align='center'>
             <td>{$rekod["idcalon"]}</td>
             <td>{$rekod["namacalon"]}</td>
-            <td><img src='{$rekod["gambar"]}' height=200 width=200></td>
+            <td><img src='{$rekod["gambar"]}' ></td>
           <td><a href='pilihundi.php'><button>UNDI</button></a></td>
                   
           </tr>";
