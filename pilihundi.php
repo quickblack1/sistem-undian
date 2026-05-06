@@ -3,7 +3,7 @@
 require('confiq.php');
 //session_start();
 
-$nokp = $_SESSION["nokp"]; 
+$nokp = $_SESSION["nokp"];
 
 // set timezone Malaysia
 date_default_timezone_set("Asia/Kuala_Lumpur");
