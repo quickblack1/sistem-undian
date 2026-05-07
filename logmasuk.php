@@ -3,6 +3,17 @@
 
       include("header.php");
     ?>
+	<script>
+		function togglePass() {
+			let pass = document.getElementById("password");
+
+			if (pass.type === "password") {
+				pass.type = "text";
+			} else {
+				pass.type = "password";
+			}
+		}
+	</script>
  	  <br>
   <br>
  	<form action ="prosesmasuk.php" method="POST">
@@ -25,7 +36,10 @@
  				</tr>
  				<tr>
  				<td>Kata laluan</td>
- 				<td> <input name= "katalaluanpengundi" size="15" type="password"></td>
+ 				<td>
+					<input id="password" name= "katalaluanpengundi" size="15" type="password">
+					<button class="button0" type="button" onclick="togglePass()">👁</button><br>
+				</td>
  				</tr>
  				<tr>
  					<td></td>
