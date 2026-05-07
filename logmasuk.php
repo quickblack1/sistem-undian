@@ -14,21 +14,20 @@
 			}
 		}
 	</script>
- 	  <br>
-  <br>
+ 	<br>
  	<form action ="prosesmasuk.php" method="POST">
  		<center>
- 		<table border ="1">
+ 		<table class="table3">
  			<tr>
- 				<td style="background-color: pink;"align="center"> WELCOME</td>
- 				<td style="background-color: lightyellow;"align="center"> LOGIN</td>
+ 				<th> WELCOME</td>
+ 				<th> LOGIN</td>
  			</tr>
  			<tr>
  				<td>
  				<img src="imej/login-user.png" width="" height="" title="logo" alt="logo" /></td>
 
  				<td>
- 					<table>
+ 					<table class="table4">
  					</tr>
  					<td>Nombor Kad Pengenalan</td>
  					<td><input name="nokp" size="12" type="text"></td>
