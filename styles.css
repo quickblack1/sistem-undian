@@ -145,6 +145,35 @@ tr{
 .table2{
   margin-left: auto;
   margin-right: auto;
+  border-collapse: collapse;
+}
+
+.table3{
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  
+}
+.table3 td{
+  border-width: 1px;
+  border-color: blue;
+  border-style: solid;
+}
+
+.table3 th{
+  background-color: pink;
+  border-width: 1px;
+  border-color: blue;
+  border-style: solid;
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.table4 td{
+  border-width: 0px;
+  border-color: blue;
+  border-style: solid;
 }
 
 .topnav {

@@ -15,18 +15,18 @@
   <br>
   <br>
  	<form action ="prosesmasukadmin.php" method="POST">
- 		<center>
- 		<table border ="1">
+ 		
+ 		<table class="table3">
  			<tr>
- 				<td style="background-color: yellow;"align="center"> Selamat Datang</td>
- 				<td style="background-color: red;"align="center"> Log Masuk</td>
+ 				<th> Selamat Datang</td>
+ 				<th> Log Masuk</td>
  			</tr>
  			<tr>
  				<td>
  				<img src="imej/login-admin.png" width="" height="" title="logo" alt="logo" /></td>
 
  				<td>
- 					<table>
+ 					<table class="table4">
  					</tr>
  					<td>ID ADMIN</td>
  					<td><input name="idadmin" size="12" type="text"></td>
