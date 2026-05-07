@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+        var skor = [78, 23, 58, 97, 12];
+        var bil = skor.length, i, j;
+        var sementara = skor[0];
+        document.write("Senarai skor sebelum diisih: <br>");
+        document.write(skor);
+        document.write("<br>Senarai selepas diisih: <br>");
+        for (i=0; i<bil-1; i++){
+            for (j=0; j<bil-i-1; j++){
+                if (skor[j] > skor[j+1]){
+                    sementara = skor[j];
+                    skor[j] = skor[j+1];
+                    skor[j+1] = sementara;
+                }
+            }
+        }
+        document.write(skor);
+        </script>
+    </body>
+</html>
