@@ -24,19 +24,18 @@
  			</tr>
  			<tr>
  				<td>
- 				<img src="imej/login-user.png" width="" height="" title="logo" alt="logo" /></td>
-
+ 					<img src="imej/login-user.png" width="" height="" title="logo" alt="logo" />
  				<td>
- 					<table class="table4">
- 					</tr>
+ 					<table class="">
+ 					<tr>
  					<td>Nombor Kad Pengenalan</td>
- 					<td><input name="nokp" size="12" type="text"></td>
+ 					<td><input name="nokp" type="text"></td>
  					
  				</tr>
  				<tr>
  				<td>Kata laluan</td>
  				<td>
-					<input id="password" name= "katalaluanpengundi" size="15" type="password">
+					<input id="password" name= "katalaluanpengundi" type="password">
 					<button class="button0" type="button" onclick="togglePass()">👁</button><br>
 				</td>
  				</tr>

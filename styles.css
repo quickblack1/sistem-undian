@@ -74,6 +74,10 @@ button:hover{
   padding-top: 3px;
 }
 
+.div3{
+  text-align: center;
+}
+
 h1{
   color: blueviolet;
 }
@@ -96,9 +100,15 @@ h3{
   border:3px solid purple;
 }
 
-input{
+input[type=text], input[type=password], select {
+  /* height: 10px; */
+  /* width: 200px; */
   padding: 5px;
-  width: 200px;
+  background-color: azure;
+  border-radius: 5px;
+  border-color: brown;
+  border-width: 1px;
+  border-style: solid;
 }
 
 .label0{
@@ -110,6 +120,16 @@ input{
   border-radius: 10px;
   max-width: 200px;
 }
+/* select{
+  padding: 5px;
+  width: 200px;
+  background-color: white;
+  border-radius: 10px;
+  border-color: coral;
+  border-width: 1px;
+  border-style: solid;
+  height: 10px; 
+} */
 
 .span0{
   color: red;
@@ -131,6 +151,14 @@ input{
   border-style: solid;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+th{
+  background-color: aqua;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
 }
 
 tr{
@@ -220,5 +248,3 @@ tr{
   margin-top: 20px;
   background-color: red;
 }
-
-

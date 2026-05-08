@@ -18,7 +18,7 @@
     kalau English gunakan 'en' 
     -->
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'ms'}, 'google_translate_element');
       }
@@ -35,7 +35,7 @@
           if(yr < 1900) yr += 1900;
           document.write(today.getDate() + " " + month[today.getMonth()] + " " + yr);
         </script>
-    </div>
+    </div> -->
 
     <div class="topnav">
       <?php $current_page = basename($_SERVER['PHP_SELF']); ?>
