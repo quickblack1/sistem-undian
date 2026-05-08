@@ -3,8 +3,6 @@
     require('confiq.php');
 
     if (isset($_POST['submit'])){
-      
-      
 
       //sql buat query
       $nokp=$_POST['nokp'];
@@ -13,34 +11,23 @@
       $kelas = $_POST['kelas'];
       //$alert = "";
 
-      $query="INSERT INTO pengundi(nokp,namapengundi,katalaluanpengundi, kelas) VALUES('$nokp','$namapengundi','$katalaluanpengundi', '$kelas');";
-      $result = mysqli_query($con,$query);
-          //run query
-          if($result == 1){
-              echo"<script>alert('Pendaftaran Anda Berjaya'); window.location.href='logmasuk.php'; </script>";
-          } else {
-              echo"<script>alert('Nombor Kad Pengenalan telah wujud'); window.location.href='daftar.php'; </script>";
-          }
+      $sql = "SELECT * FROM pengundi WHERE nokp = '$nokp'";
+      $result= mysqli_query($con, $sql);
+      $rowCount = mysqli_num_rows($result);
 
-      //tutup connection
-      mysqli_close($con);
-
-      /* if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d).{8,}$/', $katalaluanpengundi)) {
-          ?>
-          <script>
-              document.getElementById('password').focus();
-          </script>
-          <?php
-          $alert = "Kata laluan mesti sekurang-kurangnya 8 aksara serta gabungan huruf, simbol dan nombor!";
+      if ($rowCount > 0){
+        echo"<script>alert('Nombor Kad Pengenalan telah wujud'); </script>";
+        
       } else {
-          $query="INSERT INTO pengundi(nokp,namapengundi,katalaluanpengundi, kelas) VALUES('$nokp','$namapengundi','$katalaluanpengundi', '$kelas');";
-          //run query
-          if(mysqli_query($con,$query)){
-              echo"<script>alert('Pendaftaran Anda Berjaya'); window.location.href='logmasuk.php'; </script>";
-          } else {
-              echo"<script>alert('Nombor Kad Pengenalan telah wujud'); window.location.href='daftar.php'; </script>";
-          } 
-      } */
+        $query="INSERT INTO pengundi(nokp, namapengundi, katalaluanpengundi, kelas) VALUES('$nokp','$namapengundi','$katalaluanpengundi', '$kelas');";
+        $result = mysqli_query($con,$query);
+
+        if($result == 1){
+          echo"<script>alert('Pendaftaran Anda Berjaya'); window.location.href='logmasuk.php'; </script>";
+        } else {
+          echo"<script>alert('Pendaftaran Tidak Berjaya.');</script>";
+        }
+      }
 		}
     
     include("header.php");
@@ -97,7 +84,7 @@ function togglePass() {
   
   <br>
   <br> 
-<form onsubmit="return validateForm()" action="prosesdaftar.php" method="POST">
+<form onsubmit="return validateForm()" action="" method="POST">
   <table class="table1">
     <tr>
       <th> Welcome</td>
@@ -111,7 +98,7 @@ function togglePass() {
         <table>
           <tr>
             <td> No kad pengenalan </td>
-            <td><input name="nokp" type="text" placeholder='nokp tanpa -' required></td>
+            <td><input name="nokp" value="<?php if ($nokp != ""){ echo $nokp;} ?>" type="text" placeholder='nokp tanpa -' required></td>
           </tr>
           <tr>
             <td> Nama pengundi </td>
@@ -126,7 +113,7 @@ function togglePass() {
             </td>
           </tr>
           <tr>
-            <td style="background-color: orange;"align="center">Kelas</td>
+            <td>Kelas</td>
             <td>
               <select name="kelas" id="kelas" required>
                 <option value="">PILIH KELAS</option>
