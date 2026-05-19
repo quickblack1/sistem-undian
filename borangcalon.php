@@ -32,7 +32,7 @@ if (isset($_GET['nokp'])){
         //include("authadmin.php");
         ?>
         <div class="">
-            <table>
+            <table class="table5">
             <tr>
                 <th>No. KP Calon: </th>
                 <td>
