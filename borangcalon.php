@@ -31,10 +31,10 @@ if (isset($_GET['nokp'])){
         <?php
         //include("authadmin.php");
         ?>
-        <div class="div0">
-            <table width='35%' align='center'>
+        <div class="">
+            <table>
             <tr>
-                <td align='right' bgcolor='#85C1E9'>No. KP Calon: </td>
+                <th>No. KP Calon: </th>
                 <td>
                     <form action="" method="get">
                         <input type='text' name='nokp' placeholder='sila masukkan no. kp calon' required>

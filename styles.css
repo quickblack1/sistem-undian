@@ -77,6 +77,9 @@ button:hover{
 .div3{
   text-align: center;
 }
+.div4{
+  text-align: center;
+}
 
 h1{
   color: blueviolet;
@@ -153,7 +156,7 @@ input[type=text], input[type=password], select {
   padding-right: 10px;
 }
 
-th{
+.th0{
   background-color: aqua;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -214,6 +217,10 @@ tr{
   border-width: 0px;
   border-color: blue;
   border-style: solid;
+}
+
+.table5{
+  text-align: center;
 }
 
 .topnav {

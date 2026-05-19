@@ -29,6 +29,5 @@ else
 	//include "logmasuk.php";
 	header('refresh:1;URL=./logmasuk.php');
 	
-
 }
 ?>
