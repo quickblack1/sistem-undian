@@ -47,7 +47,7 @@ if (isset($_GET['nokp'])){
 
 
         <h2>MASUKKAN CALON BARU</h2>
-        sdsd
+        
         <form action='simpancalon.php' method='POST' enctype='multipart/form-data'>
         <table class="table0">
             <tr>
