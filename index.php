@@ -1,10 +1,10 @@
     <?php
       include("header.php");
     ?>
-	<br>
+	<br>waklu
 <div class="div0">
     <img src="imej/vote.png" style="width:150px; height:150px;">
-        <h2><p style="font-family:algerian">SISTEM E-VOTE</p></h2>
+        <h2><p style="font-family:algerian">wakluSISTEM E-VOTE</p></h2>
 	<p>
 <p style="font-family:century gothic">
 	 Selamat datang ke Sistem Undian Kelas! <br>
