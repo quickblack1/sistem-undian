@@ -80,6 +80,13 @@ button:hover{
 .div4{
   text-align: center;
 }
+.div5{
+  margin-bottom: 0px;
+  height: 450px;
+  background: url(imej/banner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 h1{
   color: blueviolet;
@@ -95,6 +102,8 @@ h3{
 
 .img0{
   width:100%;
+  
+  border: 1px solid black;
 }
 
 .img1{
@@ -183,6 +192,7 @@ tr{
   margin-right: auto;
   /* border: 1px solid red; */
   height: 30px;
+  width: 100px;
 }
 
 .table2{
@@ -226,8 +236,10 @@ tr{
 }
 
 .topnav {
+  border: 1px solid black;
   overflow: hidden;
   background-color:rgb(71, 214, 126);
+  margin-top: 0px;
 }
 
 .topnav a {

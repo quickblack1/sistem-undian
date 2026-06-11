@@ -6,8 +6,11 @@
   </head>
   
   <body>
-	  <img class="img0" src="imej/banner.png">
-	  <div id="google_translate_element"></div>
+    <div class="div5">
+      <!-- <img class="img0" src="imej/banner.png"> -->
+    </div>
+	  
+	  <!-- <div id="google_translate_element"></div> -->
 
 
     <!-- letak kod ni sebelum tutup </body> -->

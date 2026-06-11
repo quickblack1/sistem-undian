@@ -32,7 +32,7 @@ function bgChange(bg) {
         onmouseout="bgChange(this.style.backgroundColor)"
         style="background-color:Silver">
     </td>
-    <h10>👑sila klik warna dibawah untuk tukar warna👑</h10>
+    <h10>👑Sila klik warna dibawah untuk tukar warna👑</h10>
   </tr>
 </table>
 
