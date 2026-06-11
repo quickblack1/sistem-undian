@@ -7,7 +7,7 @@
   
   <body>
     <div class="div5">
-      <!-- <img class="img0" src="imej/banner.png"> -->
+      <img class="img0" src="imej/banner.png">
     </div>
 	  
 	  <!-- <div id="google_translate_element"></div> -->
