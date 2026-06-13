@@ -14,7 +14,7 @@ $result1 = mysqli_query($con, $sql);
 
 while($row1 = mysqli_fetch_array($result1)){
   $jawatan = $row1['jawatan'];
-  echo $jawatan;
+  echo "<h3>".$jawatan."</h3>";
 
   $query = "SELECT calon.namacalon, calon.gambar, COUNT(undian.idcalon) AS jumlah_undi
           FROM undian

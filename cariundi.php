@@ -1,6 +1,8 @@
 <?php
+require('confiq.php');
+include("header.php");
 //require('db.php');
-include("menuadmin.php");
+//include("menuadmin.php");
 
 ?>
 <tr>
@@ -8,7 +10,6 @@ include("menuadmin.php");
 <tr>
 <center>
 <?php 
-require('confiq.php');
 
 echo"
 

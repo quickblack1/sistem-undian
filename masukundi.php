@@ -7,7 +7,6 @@ require('confiq.php');//connection
 
 
 //sql buat query
-
 $nokp = $_GET['nokp'];
 $idcalon = $_GET['idcalon'];
 $tarikh = $_GET['tarikh'];

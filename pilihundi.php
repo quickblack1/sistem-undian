@@ -1,9 +1,9 @@
 <?php
 //include("menupengundi.php");
 require('confiq.php');
-//session_start();
+session_start();
 
-//$nokp = $_SESSION["nokp"];
+$nokp = $_SESSION["nokp"];
 
 // set timezone Malaysia
 date_default_timezone_set("Asia/Kuala_Lumpur");
@@ -11,6 +11,35 @@ date_default_timezone_set("Asia/Kuala_Lumpur");
 // generate tarikh & masa automatik
 $tarikh = date("Y-m-d");
 $masa = date("H:i:s");
+
+if (isset($_POST["submit"]))
+  {
+    
+    //sql buat query
+    $nokp = $_POST['nokp'];
+    $idcalon = $_POST['idcalon'];
+    $tarikh = $_POST['tarikh'];
+    $masa = $_POST['masa'];
+    $jawatan = $_POST['jawatan'];
+
+    // echo $nokp."<br>";
+    // echo $idcalon."<br>";
+    // echo $tarikh."<br>";
+    // echo $masa."<br>";
+    // echo $jawatan."<br>";
+
+    // echo "di sini";
+    // exit();
+
+    // Semak jumlah undian sedia ada untuk nokp ini
+    //$semak = "SELECT COUNT(*) AS jumlah FROM undian WHERE nokp='$nokp'";
+    //$result = mysqli_query($con, $semak);
+    //$row = mysqli_fetch_assoc($result);
+
+    $query = "INSERT INTO undian (nokp, idcalon, tarikh, masa, jawatan) 
+              VALUES ('$nokp','$idcalon','$tarikh','$masa', '$jawatan')";
+    $result = mysqli_query($con, $query);
+  }
 ?>
 
 
@@ -50,7 +79,7 @@ $masa = date("H:i:s");
       ?>
       <div class="div2">
         <h3>Jawatan: <?php echo $jawatan; ?></h3>
-        <form action="masukundi.php" method="GET" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="nokp" value="<?php echo $nokp; ?>">
           <input type="hidden" name="jawatan" value="<?php echo $jawatan; ?>">
           <input type="hidden" name="tarikh" value="<?php echo $tarikh; ?>">
@@ -89,7 +118,7 @@ $masa = date("H:i:s");
                     <?php
                   } else {
                     ?>
-                    <div><a class="a01" href="result.php">Undian telah dibuat. Papar keputusan.</a></div>
+                    <div>Undian telah dibuat. <a class="a01" href="result.php">Papar keputusan.</a></div>
                     <?php
                   }
                   ?>
