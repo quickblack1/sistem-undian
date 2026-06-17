@@ -16,48 +16,43 @@
   <br>
  	<form action ="prosesmasukadmin.php" method="POST">
  		
- 		<table class="table3">
+ 		<table class="table2">
  			<tr>
- 				<th> Selamat Datang</td>
- 				<th> Log Masuk</td>
+ 				<th class="th0"> Selamat Datang</td>
+ 				<th class="th0"> Log Masuk</td>
  			</tr>
  			<tr>
- 				<td>
- 				<img src="imej/login-admin.png" width="" height="" title="logo" alt="logo" /></td>
-
- 				<td>
- 					<table class="table4">
- 					</tr>
- 					<td>ID ADMIN</td>
- 					<td><input name="idadmin" size="12" type="text"></td>
- 					
- 				</tr>
- 				<tr>
- 				<td>KATA LALUAN</td>
- 				<td>
-					<input id="password" name="katalaluanadmin" size="15" type="password">
-					<button class="button0" type="button" onclick="togglePass()">👁</button>
+ 				<td class="td0">
+ 					<img src="imej/login-admin.png" width="" height="" title="logo" alt="logo" />
 				</td>
- 				</tr>
- 				<tr>
- 					<td></td>
-	<td>
-		<button name="submit" type="submit">Login</button>
-		<button type='reset'>Reset</button>
-	</td>
-
-<tr>
-
-<td><a href="index.php">Laman Utama</a></td>
- 					
-
-
- 				</tr>
- 			</table>
- 		</td>
- 	</tr>
- </table>
-</form>
+ 				<td class="td0">
+ 					<table class="table4">
+ 						</tr>
+ 							<td>ID ADMIN</td>
+ 							<td><input name="idadmin" size="12" type="text"></td>
+ 						</tr>
+ 						<tr>
+ 							<td>KATA LALUAN</td>
+							<td>
+								<input id="password" name="katalaluanadmin" size="15" type="password">
+								<button class="button0" type="button" onclick="togglePass()">👁</button>
+							</td>
+ 						</tr>
+ 						<tr>
+ 							<td></td>
+							<td>
+								<button name="submit" type="submit">Login</button>
+								<button type='reset'>Reset</button>
+							</td>
+						</tr>
+						<tr>
+							<td><a href="index.php">Laman Utama</a></td>
+ 						</tr>
+ 					</table>
+ 				</td>
+ 			</tr>
+ 		</table>
+	</form>
 <?php
 include("footer.php");
 ?>

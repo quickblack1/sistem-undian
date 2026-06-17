@@ -2,12 +2,14 @@
     //connection
     require('confiq.php');
 
+
     if (isset($_POST['submit'])){
 
       //sql buat query
       $nokp=$_POST['nokp'];
       $namapengundi=$_POST['namapengundi'];
       $katalaluanpengundi=$_POST['katalaluanpengundi'];
+      $jantina = $_POST['jantina'];
       $kelas = $_POST['kelas'];
       //$alert = "";
 
@@ -16,8 +18,18 @@
       $rowCount = mysqli_num_rows($result);
 
       if ($rowCount > 0){
-        echo"<script>alert('Nombor Kad Pengenalan telah wujud'); </script>";
-        
+      ?>
+        <script>
+          alert('Nombor Kad Pengenalan telah wujud.');
+          window.onload = function() {
+            let input = document.getElementById('nokp');
+            input.focus();
+            
+            // Letak cursor di hujung teks
+            input.setSelectionRange(input.value.length, input.value.length);
+          }
+        </script>
+      <?php
       } else {
         $query="INSERT INTO pengundi(nokp, namapengundi, katalaluanpengundi, kelas) VALUES('$nokp','$namapengundi','$katalaluanpengundi', '$kelas');";
         $result = mysqli_query($con,$query);
@@ -29,8 +41,6 @@
         }
       }
 		}
-    
-    include("header.php");
   ?>
 
 <script>
@@ -81,28 +91,28 @@ function togglePass() {
     }
 }
 </script>
-  
+  <?php include("header.php"); ?>
   <br>
   <br> 
 <form onsubmit="return validateForm()" action="" method="POST">
-  <table class="table1">
-    <tr>
-      <th> Welcome</td>
-      <th> Pendaftaran Pengundi Baru</td>
+  <table class="table2">
+    <tr class="">
+      <th class="th0"> Welcome</td>
+      <th class="th0"> Pendaftaran Pengundi Baru</td>
     </tr>
     <tr>
-      <td>
+      <td class="td0">
         <img src="imej/logo.png" width="300" height="125" title="logo" alt="logo" />
       </td>
-      <td>
+      <td class="td0">
         <table>
           <tr>
             <td> No kad pengenalan </td>
-            <td><input name="nokp" value="<?php if ($nokp != ""){ echo $nokp;} ?>" type="text" placeholder='nokp tanpa -' required></td>
+            <td><input name="nokp" id="nokp" oninput="this.value = this.value.replace(/[^0-9]/g, '')" value="<?php echo isset($_POST['nokp']) ? htmlspecialchars($_POST['nokp']) : ''; ?>" type="text" placeholder='nokp tanpa -' required></td>
           </tr>
           <tr>
             <td> Nama pengundi </td>
-            <td><input name="namapengundi" type="text" placeholder='nama penuh' required></td>
+            <td><input name="namapengundi" id="" type="text" value="<?php echo isset($_POST['namapengundi']) ? htmlspecialchars($_POST['namapengundi']) : ''; ?>" placeholder='nama penuh' required></td>
           </tr>
           <tr>
             <td>Kata laluan</td>
@@ -113,11 +123,23 @@ function togglePass() {
             </td>
           </tr>
           <tr>
+            <td>Jantina</td>
+            <td>
+              <label>
+                <input type="radio" name="jantina" value="L" <?php if ($_POST['jantina'] == 'L'){ echo 'checked'; } ?> required> Lelaki
+              </label>
+
+              <label>
+                <input type="radio" name="jantina" value="P" <?php if ($_POST['jantina'] == 'P'){ echo 'checked'; } ?>> Perempuan
+              </label>
+            </td>
+</tr>
+          <tr>
             <td>Kelas</td>
             <td>
               <select name="kelas" id="kelas" required>
                 <option value="">PILIH KELAS</option>
-                <option value="5A">5 ALPHA</option>
+                <option value="5A" <?php if ($_POST['kelas'] == '5A'){ echo 'selected'; } ?> >5 ALPHA</option>
                 <option value="5B">5 BINARY</option>
                 <option value="5C">5 CYBER</option>
                 <option value="5D">5 DIGITAL</option>

@@ -177,6 +177,12 @@ tr{
   border-width: 0px;
 }
 
+.tr0{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .table0 td{
   /* border: 1px solid red; */
   padding-left: 10px;
@@ -233,6 +239,12 @@ tr{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+.td0{
+  border: 1px solid grey;
+  border-bottom-left-radius: 12px;
+  padding: 10px;
 }
 
 .topnav {
