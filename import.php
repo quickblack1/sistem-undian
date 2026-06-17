@@ -1,27 +1,15 @@
 <?php
-include("menuadmin.php");
+include("header.php");
 
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>import </title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-  <body style="background-color:lavender;"> 
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
 
   <center>
-  <font color=green size=12pt>
-IMPORT FAIL<br>
+<h2>IMPORT FAIL</h2><br>
 ************************************<br>
-</font>
+
 
 <?PHP
 
@@ -30,8 +18,8 @@ IMPORT FAIL<br>
 <form  name='form1' id='form1' method='POST' action='import.php' 
 enctype='multipart/form-data'>
   <h2>Pilih Fail CSV untuk di import :</h2> <br> 
-  <input type='file' name='file' required/>
-  <button type='submit' name='btn-upload'style='background-color:black;color:white;width:80px; height:20px;'>UPLOAD</button>
+  <input type='file' name='file' required/><br>
+  <button type='submit' name='btn-upload'>UPLOAD</button>
 </form> 
 
 <?php
@@ -88,7 +76,5 @@ if (isset($_POST['btn-upload'])){
 ?>
 <br>
 
-</center>
-</body>
-</html>
+<?php include("footer.php") ?>
 

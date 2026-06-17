@@ -31,8 +31,11 @@ require('confiq.php');
         ?>
         <tr align='center'>
           <td><?php echo $rekod["idcalon"]; ?></td>
-          <td><?php echo $rekod["namacalon"]; ?></td>
-          <td><img src='<?php echo $rekod["gambar"]; ?>' ></td>
+          <td>
+            <?php echo $rekod["namacalon"]; ?><br>
+            <?php echo $rekod["kelas"]; ?>
+          </td>
+          <td><img src='<?php echo $rekod["gambar"]; ?>' width="100px"></td>
           <td><a href='pilihundi.php'><button>UNDI</button></a></td>
         </tr>
         <?php

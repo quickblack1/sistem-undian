@@ -1,19 +1,15 @@
-<center>
-<font color='red'>
 <?php
 require('confiq.php');
 //get the value from form update
-$idcalon = $_GET['idcalon'];
+$nokp = $_GET['nokp'];
 
 //query untuk padam data dalam database
-$query = "DELETE FROM calon WHERE idcalon = '$idcalon'";
+$query = "DELETE FROM pengundi WHERE nokp = '$nokp'";
 $rekod = mysqli_query($con, $query);
-echo $rekod;
-//exit;
 
 if ($rekod == 1) {
 	echo "<script>alert('Calon telah berjaya dipadam.'); window.location='paparahli.php';</script>";
-    exit();
+    //exit();
     //include "padam.php"; // jika berjaya padam
 } else {
    

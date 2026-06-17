@@ -33,7 +33,7 @@
         </script>
       <?php
       } else {
-        $query="INSERT INTO pengundi(nokp, namapengundi, katalaluanpengundi, kelas) VALUES('$nokp','$namapengundi','$katalaluanpengundi', '$kelas');";
+        $query="INSERT INTO pengundi(nokp, namapengundi, katalaluanpengundi, jantina, kelas) VALUES('$nokp','$namapengundi','$katalaluanpengundi', '$jantina', '$kelas');";
         $result = mysqli_query($con,$query);
 
         if($result == 1){

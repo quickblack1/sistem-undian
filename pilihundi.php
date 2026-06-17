@@ -89,7 +89,8 @@ if (isset($_POST["submit"]))
                 <td align="right"><b>CALON-CALON</b></td>
                 <td>
                   <?php
-                  $query = "SELECT DISTINCT idcalon, namacalon, gambar FROM calon WHERE jawatan = '$jawatan'";
+                  $query = "SELECT * FROM pengundi";
+                  // $query = "SELECT DISTINCT idcalon, namacalon, gambar FROM calon WHERE jawatan = '$jawatan'";
                   $result = mysqli_query($con, $query);
 
                   while($data = mysqli_fetch_array($result)){

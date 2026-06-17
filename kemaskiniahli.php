@@ -1,0 +1,112 @@
+<?php
+//include auth.php file on all secure pages
+include("authadmin.php");
+
+require('confiq.php');
+$alert = "";
+$namaCalon = "";
+if (isset($_GET['nokp'])){
+    $nokp = $_GET['nokp'];
+    //echo $nokp;
+    $sql = "SELECT * FROM pengundi WHERE nokp = '$nokp'";
+    $result = mysqli_query($con, $sql);
+    $rowCount = mysqli_num_rows($result);
+    
+    if ($rowCount != 0){
+        while ($row = mysqli_fetch_array($result)){
+            $namaCalon = $row['namapengundi'];
+            //echo $namaCalon;
+        }
+    } else {
+        $alert = "No KP belum ada didaftarkan.";
+    }
+}
+
+$sql = "SELECT idcalon FROM calon ORDER BY idcalon DESC LIMIT 1";
+$result = mysqli_query($con, $sql);
+while ($row = mysqli_fetch_array($result)){
+    $idcalon = $row['idcalon'];
+    $idcalon = ++$idcalon;
+}
+?>
+
+        <?php
+        include("header.php");
+        ?>
+        <div class="">
+            <table class="table5">
+            <tr>
+                <th>No. KP Calon: </th>
+                <td>
+                    <form action="" method="get">
+                        <input type='text' name='nokp' placeholder='sila masukkan no. kp calon' required>
+                        <button type="submit">Cari</button>
+                        <?php echo $alert; ?>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+        <h2>MASUKKAN CALON BARU</h2>
+        
+        <form action='simpancalon.php' method='POST' enctype='multipart/form-data'>
+        <table class="table6">
+            <tr>
+                <td>ID CALON </td>
+                <td><input type='text' name='idcalon' value="<?php echo $idcalon; ?>" placeholder='sila masukkan id calon' minlength="5" required readonly></td>
+            </tr>
+            <tr>
+                <td>No. KP Calon </td>
+                <td><input type='text' name='nokp' placeholder='sila masukkan no. kp calon' required></td>
+            </tr>
+
+            <tr>
+                <td>NAMA CALON </td>
+                <td><input type='text' name='namacalon' placeholder='nama calon' oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'').toUpperCase();" value="<?php echo isset($_POST['namacalon']) ? htmlspecialchars($_POST['namacalon']) : ''; ?>" required></td>
+
+            </tr>
+            <tr>
+                <td>GAMBAR </td>
+                <td><input type='file' name='gambar' placeholder='gambar' required></td>
+            </tr>
+
+            <tr>
+                <td>JAWATAN</td>
+                <td>
+                    <select name="jawatan" id="" required>
+                        <option value="">PILIH JAWATAN</option>
+                        <option value="Pengerusi">PENGERUSI</option>
+                        <option value="Naib Pengerusi 1">NAIB PENGERUSI 1</option>
+                        <option value="Naib Pengerusi 2">NAIB PENGERUSI 2</option>
+                        <option value="Setiausaha">SETIAUSAHA</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>idadmin </td>
+                <td>
+                    <select name='idadmin' required>
+                        <option disabled selected value>Pilih</option>";
+                        <?php
+                                    //statement SQL untuk memilih semua field yang terdapat didalam table bilik
+                                    $query="SELECT * FROM admin ";
+                                    $result=mysqli_query($con,$query);
+                                    WHILE($data=mysqli_fetch_array($result)){
+                                        //while($data=mysqli_fetch_array($sql)){
+                                        echo"<option value='".$data['idadmin']."'>".$data['idadmin']."</option>";
+                                    }
+                        ?>
+                    </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type='submit' value='Hantar' name='submit'> <input type='reset' value='Padam'></td>
+            </tr>
+        </table>
+        </form>
+        </div>
+<?php include("footer.php"); ?>

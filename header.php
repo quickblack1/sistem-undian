@@ -60,7 +60,7 @@
         } elseif (isset($_SESSION["idadmin"])){
           ?>
             <a href="borangcalon.php" class="<?= ($current_page == 'borangcalon.php') ? 'active' : '' ?>">TAMBAH CALON</a>
-            <a href="paparcalon.php" class="<?= ($current_page == 'paparcalon.php') ? 'active' : '' ?>">PAPAR CALON</a>
+            <a href="paparahli.php" class="<?= ($current_page == 'paparahli.php') ? 'active' : '' ?>">PAPAR AHLI</a>
             <a href="cariadmin.php" class="<?= ($current_page == 'cariadmin.php') ? 'active' : '' ?>">CARIAN/KEMASKINI CALON</a>
             <a href="cariundi.php" class="<?= ($current_page == 'cariundi.php') ? 'active' : '' ?>">CARIAN/PADAM UNDIAN</a>
             <a href="laporan.php" class="<?= ($current_page == 'laporan.php') ? 'active' : '' ?>">LAPORAN</a>

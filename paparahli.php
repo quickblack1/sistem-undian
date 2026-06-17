@@ -2,14 +2,14 @@
 require('confiq.php');
 ?>
 <?php
-    include("header.php");
+include("header.php");
 ?>
   <center>
-<h2>MAKLUMAT CALON</h2>
+<h2>MAKLUMAT AHLI</h2>
 
 <?php
 
-$query="SELECT * FROM calon";
+$query="SELECT * FROM pengundi";
 
 
 $result=mysqli_query($con, $query);
@@ -28,21 +28,30 @@ echo "<tr bgcolor='pink' align='center'>
         word-wrap: break-word;
       }
     </style>
-		   <td> <b> ID Calon</b> </td>
-		   <td> <b> Nama Calon</b> </td>
+		   <td> <b> NO. KP</b> </td>
+		   <td> <b> Nama</b> </td>
            <td><b>gambar </b></td>
            
 
      </tr>";
-     WHILE($rekod=mysqli_fetch_array($result))
-{
-	
+     WHILE($rekod=mysqli_fetch_array($result)){
+	    $nokp = $rekod["nokp"];
+      $sql = "SELECT gambar FROM calon WHERE nokp = '$nokp'";
+      $result2=mysqli_query($con, $sql);
+      $row=mysqli_fetch_array($result2);
+      $gambar = $row["gambar"];
+      echo $gambar;
+      //exit();
 
   echo "<tr align='center'>
-  			<td>{$rekod["idcalon"]}</td>
-  			<td>{$rekod["namacalon"]}</td>
-        <td><img src='{$rekod["gambar"]}' height=200 width=200></td>
-       <td><a href='padamcalon.php?idcalon={$rekod["idcalon"]}'><button>Padam </button></a></td>
+  			<td>{$rekod["nokp"]}</td>
+  			<td><a href='kemaskiniahli.php?nokp=$nokp'>{$rekod["namapengundi"]}</a></td>
+        <td>
+         
+          <img src='{$rekod["gambar"]}' height=200 width=200>
+        
+        </td>
+       <td><a href='padamahli.php?nokp={$rekod["nokp"]}'><button>Padam </button></a></td>
               
        </tr>";
       
