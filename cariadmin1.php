@@ -1,16 +1,8 @@
 <?php
 
-include("menuadmin.php");
+include("header.php");
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KEMASKINI CALON</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
 
-  <body style="background-color:powderblue;"> 
   <center>
   <font color=black  size=12pt>
 KEMASKINI CALON<br>

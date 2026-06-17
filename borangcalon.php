@@ -92,9 +92,8 @@ if (isset($_GET['nokp'])){
                                     $query="SELECT * FROM admin ";
                                     $result=mysqli_query($con,$query);
                                     WHILE($data=mysqli_fetch_array($result)){
-                                    //while($data=mysqli_fetch_array($sql)){
+                                        //while($data=mysqli_fetch_array($sql)){
                                         echo"<option value='".$data['idadmin']."'>".$data['idadmin']."</option>";
-
                                     }
                         ?>
                     </select>
