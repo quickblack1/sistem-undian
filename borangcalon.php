@@ -1,6 +1,6 @@
 <?php
 //include auth.php file on all secure pages
-//include("authadmin.php");
+include("authadmin.php");
 
 require('confiq.php');
 $alert = "";
@@ -22,14 +22,16 @@ if (isset($_GET['nokp'])){
     }
 }
 
-
+$sql = "SELECT idcalon FROM calon ORDER BY idcalon DESC LIMIT 1";
+$result = mysqli_query($con, $sql);
+while ($row = mysqli_fetch_array($result)){
+    $idcalon = $row['idcalon'];
+    $idcalon = ++$idcalon;
+}
 ?>
 
         <?php
         include("header.php");
-        ?>
-        <?php
-        //include("authadmin.php");
         ?>
         <div class="">
             <table class="table5">
@@ -49,19 +51,19 @@ if (isset($_GET['nokp'])){
         <h2>MASUKKAN CALON BARU</h2>
         
         <form action='simpancalon.php' method='POST' enctype='multipart/form-data'>
-        <table class="table0">
+        <table class="table6">
             <tr>
                 <td>ID CALON </td>
-                <td><input type='text' name='idcalon' placeholder='sila masukkan id calon' minlength="5" required></td>
+                <td><input type='text' name='idcalon' value="<?php echo $idcalon; ?>" placeholder='sila masukkan id calon' minlength="5" required readonly></td>
             </tr>
             <tr>
                 <td>No. KP Calon </td>
-                <td><input type='text' name='nokp' placeholder='sila masukkan no. kp calon' required></td>
+                <td><input type='text' name='nokp' placeholder='sila masukkan no. kp calon' oninput="this.value = this.value.replace(/[^0-9]/g, '')" value="<?php echo isset($_POST['nokp']) ? htmlspecialchars($_POST['nokp']) : ''; ?>" required></td>
             </tr>
 
             <tr>
                 <td>NAMA CALON </td>
-                <td><input type='text' name='namacalon' placeholder='nama calon' value='<?php echo $namaCalon; ?>' required></td>
+                <td><input type='text' name='namacalon' placeholder='nama calon' oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'').toUpperCase();" value="<?php echo isset($_POST['namacalon']) ? htmlspecialchars($_POST['namacalon']) : ''; ?>" required></td>
 
             </tr>
             <tr>
@@ -107,5 +109,4 @@ if (isset($_GET['nokp'])){
         </table>
         </form>
         </div>
-    </body>
-</html>
+<?php include("footer.php"); ?>

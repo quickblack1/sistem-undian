@@ -1,6 +1,8 @@
   <?php
+
     //connection
     require('confiq.php');
+    include("header.php");
 
 
     if (isset($_POST['submit'])){
@@ -91,9 +93,7 @@ function togglePass() {
     }
 }
 </script>
-  <?php include("header.php"); ?>
-  <br>
-  <br> 
+<br>
 <form onsubmit="return validateForm()" action="" method="POST">
   <table class="table2">
     <tr class="">
@@ -112,7 +112,7 @@ function togglePass() {
           </tr>
           <tr>
             <td> Nama pengundi </td>
-            <td><input name="namapengundi" id="" type="text" value="<?php echo isset($_POST['namapengundi']) ? htmlspecialchars($_POST['namapengundi']) : ''; ?>" placeholder='nama penuh' required></td>
+            <td><input name="namapengundi" id="namapengundi" type="text" oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'')" value="<?php echo isset($_POST['namapengundi']) ? htmlspecialchars($_POST['namapengundi']) : ''; ?>" placeholder='nama penuh' required></td>
           </tr>
           <tr>
             <td>Kata laluan</td>
@@ -140,13 +140,13 @@ function togglePass() {
               <select name="kelas" id="kelas" required>
                 <option value="">PILIH KELAS</option>
                 <option value="5A" <?php if ($_POST['kelas'] == '5A'){ echo 'selected'; } ?> >5 ALPHA</option>
-                <option value="5B">5 BINARY</option>
-                <option value="5C">5 CYBER</option>
-                <option value="5D">5 DIGITAL</option>
-                <option value="5E">5 EVOLUTION</option>
-                <option value="5F">5 FUTURISTIC</option>
-                <option value="5G">5 GIGABYTE</option>
-                <option value="5H">5 HOLOGRAM</option>
+                <option value="5B" <?php if ($_POST['kelas'] == '5B'){ echo 'selected'; } ?> >5 BINARY</option>
+                <option value="5C" <?php if ($_POST['kelas'] == '5C'){ echo 'selected'; } ?> >5 CYBER</option>
+                <option value="5D" <?php if ($_POST['kelas'] == '5D'){ echo 'selected'; } ?> >5 DIGITAL</option>
+                <option value="5E" <?php if ($_POST['kelas'] == '5E'){ echo 'selected'; } ?> >5 EVOLUTION</option>
+                <option value="5F" <?php if ($_POST['kelas'] == '5F'){ echo 'selected'; } ?> >5 FUTURISTIC</option>
+                <option value="5G" <?php if ($_POST['kelas'] == '5G'){ echo 'selected'; } ?> >5 GIGABYTE</option>
+                <option value="5H" <?php if ($_POST['kelas'] == '5H'){ echo 'selected'; } ?> >5 HOLOGRAM</option>
               </select>
             </td>
           </tr>

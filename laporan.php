@@ -5,19 +5,31 @@ include('confiq.php');
 include("header.php");
 // include("resultadmin.php");
 ?>
+<h2>Keputusan Undian Terkini</h2>
 <?php
 
-//include("menuadmin.php");
-$query = "SELECT calon.namacalon,calon.idcalon, COUNT(undian.idcalon) AS jumlah_undi
-          FROM undian
-          inner JOIN calon ON undian.idcalon = calon.idcalon
-          GROUP BY undian.idcalon
-          ORDER BY jumlah_undi DESC";
+$sql = "SELECT jawatan FROM undian GROUP BY jawatan";
+$result = mysqli_query($con, $sql);
+while($row = mysqli_fetch_array($result)){
+    ?>
 
-$result = mysqli_query($con, $query);
+    <div>
+        <?php
+            echo $row['jawatan'];
+            $query = "SELECT calon.namacalon,calon.idcalon, COUNT(undian.idcalon) AS jumlah_undi
+                    FROM undian
+                    INNER JOIN calon ON undian.idcalon = calon.idcalon
+                    WHERE calon.jawatan = 'Pengerusi'
+                    GROUP BY undian.idcalon
+                    ORDER BY jumlah_undi DESC";
 
-echo "<h2>Keputusan Undian Terkini</h2>";
-echo "<table border='1' cellpadding='5'>
+            $result = mysqli_query($con, $query);
+
+echo "";
+
+
+
+echo "<table class='table5'>
         <tr>
             <th>Nama Calon</th>
             <th>ID Calon</th>
@@ -32,6 +44,12 @@ while($row = mysqli_fetch_array($result)){
           </tr>";
 }
 echo "</table>";
+        ?>
+    </div>
+    <?php
+}  
+
+
 ?>
 
 
@@ -86,7 +104,7 @@ if(isset($chk))
  
     if (mysqli_num_rows($result) > 0) 
     {
-     echo "<table border='1' cellpadding='2' cellspacing='2'>";
+     echo "<table class='table5'>";
     echo "<tr bgcolor='yellow' align='center'>
       
         <td> <b> idundian </b> </td>

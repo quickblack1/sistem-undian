@@ -13,7 +13,6 @@
 		}
 	</script>
   <br>
-  <br>
  	<form action ="prosesmasukadmin.php" method="POST">
  		
  		<table class="table2">
