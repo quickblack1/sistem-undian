@@ -99,6 +99,9 @@ h2{
 
 h3{
   color: blueviolet;
+  text-align: center;
+  /* background-color: blue; */
+  margin-bottom: 5px;
 }
 
 .img0{
@@ -237,6 +240,7 @@ tr{
 }
 
 .table5{
+  /* background-color: aqua; */
   margin-left: auto;
   margin-right: auto;
   text-align: center;

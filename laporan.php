@@ -15,15 +15,16 @@ while($row = mysqli_fetch_array($result)){
 
     <div>
         <?php
-            echo $row['jawatan'];
+            $jawatan = $row['jawatan'];
+            echo "<h3>".$jawatan."</h3>";
             $query = "SELECT calon.namacalon,calon.idcalon, COUNT(undian.idcalon) AS jumlah_undi
                     FROM undian
                     INNER JOIN calon ON undian.idcalon = calon.idcalon
-                    WHERE calon.jawatan = 'Pengerusi'
+                    WHERE calon.jawatan = '$jawatan'
                     GROUP BY undian.idcalon
                     ORDER BY jumlah_undi DESC";
 
-            $result = mysqli_query($con, $query);
+            $result2 = mysqli_query($con, $query);
 
 echo "";
 
@@ -36,11 +37,11 @@ echo "<table class='table5'>
             <th>Jumlah Undi</th>
         </tr>";
 
-while($row = mysqli_fetch_array($result)){
+while($row2 = mysqli_fetch_array($result2)){
     echo "<tr>
-            <td>".$row['namacalon']."</td>
-            <td>".$row['idcalon']."</td>
-            <td>".$row['jumlah_undi']."</td>
+            <td>".$row2['namacalon']."</td>
+            <td>".$row2['idcalon']."</td>
+            <td>".$row2['jumlah_undi']."</td>
           </tr>";
 }
 echo "</table>";
