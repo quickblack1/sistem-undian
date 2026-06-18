@@ -33,7 +33,15 @@ require('confiq.php');
           <td><?php echo $rekod["idcalon"]; ?></td>
           <td>
             <?php echo $rekod["namacalon"]; ?><br>
-            <?php echo $rekod["kelas"]; ?>
+            <?php
+            $nokp = $rekod["nokp"];
+            $sql = "SELECT kelas FROM pengundi WHERE nokp = '$nokp'";
+            $result = mysqli_query($con, $sql);
+            while ($row = mysqli_fetch_array($result)){
+              echo $row["kelas"];
+            }
+            ?>
+            <?php  ?>
           </td>
           <td><img src='<?php echo $rekod["gambar"]; ?>' width="100px"></td>
           <td><a href='pilihundi.php'><button>UNDI</button></a></td>

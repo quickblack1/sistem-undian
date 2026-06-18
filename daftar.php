@@ -126,11 +126,11 @@ function togglePass() {
             <td>Jantina</td>
             <td>
               <label>
-                <input type="radio" name="jantina" value="L" <?php if ($_POST['jantina'] == 'L'){ echo 'checked'; } ?> required> Lelaki
+                <input type="radio" name="jantina" value="L" <?php if (isset($_POST['jantina']) == 'L'){ echo 'checked'; } ?> required> Lelaki
               </label>
 
               <label>
-                <input type="radio" name="jantina" value="P" <?php if ($_POST['jantina'] == 'P'){ echo 'checked'; } ?>> Perempuan
+                <input type="radio" name="jantina" value="P" <?php if (isset($_POST['jantina']) == 'P'){ echo 'checked'; } ?>> Perempuan
               </label>
             </td>
 </tr>
@@ -139,14 +139,14 @@ function togglePass() {
             <td>
               <select name="kelas" id="kelas" required>
                 <option value="">PILIH KELAS</option>
-                <option value="5A" <?php if ($_POST['kelas'] == '5A'){ echo 'selected'; } ?> >5 ALPHA</option>
-                <option value="5B" <?php if ($_POST['kelas'] == '5B'){ echo 'selected'; } ?> >5 BINARY</option>
-                <option value="5C" <?php if ($_POST['kelas'] == '5C'){ echo 'selected'; } ?> >5 CYBER</option>
-                <option value="5D" <?php if ($_POST['kelas'] == '5D'){ echo 'selected'; } ?> >5 DIGITAL</option>
-                <option value="5E" <?php if ($_POST['kelas'] == '5E'){ echo 'selected'; } ?> >5 EVOLUTION</option>
-                <option value="5F" <?php if ($_POST['kelas'] == '5F'){ echo 'selected'; } ?> >5 FUTURISTIC</option>
-                <option value="5G" <?php if ($_POST['kelas'] == '5G'){ echo 'selected'; } ?> >5 GIGABYTE</option>
-                <option value="5H" <?php if ($_POST['kelas'] == '5H'){ echo 'selected'; } ?> >5 HOLOGRAM</option>
+                <option value="5A" <?php if (isset($_POST['kelas']) == '5A'){ echo 'selected'; } ?> >5 ALPHA</option>
+                <option value="5B" <?php if (isset($_POST['kelas']) == '5B'){ echo 'selected'; } ?> >5 BINARY</option>
+                <option value="5C" <?php if (isset($_POST['kelas']) == '5C'){ echo 'selected'; } ?> >5 CYBER</option>
+                <option value="5D" <?php if (isset($_POST['kelas']) == '5D'){ echo 'selected'; } ?> >5 DIGITAL</option>
+                <option value="5E" <?php if (isset($_POST['kelas']) == '5E'){ echo 'selected'; } ?> >5 EVOLUTION</option>
+                <option value="5F" <?php if (isset($_POST['kelas']) == '5F'){ echo 'selected'; } ?> >5 FUTURISTIC</option>
+                <option value="5G" <?php if (isset($_POST['kelas']) == '5G'){ echo 'selected'; } ?> >5 GIGABYTE</option>
+                <option value="5H" <?php if (isset($_POST['kelas']) == '5H'){ echo 'selected'; } ?> >5 HOLOGRAM</option>
               </select>
             </td>
           </tr>

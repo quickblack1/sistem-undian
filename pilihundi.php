@@ -1,7 +1,7 @@
+<?php include('header.php'); ?>
 <?php
 //include("menupengundi.php");
 require('confiq.php');
-session_start();
 
 $nokp = $_SESSION["nokp"];
 
@@ -43,7 +43,7 @@ if (isset($_POST["submit"]))
 ?>
 
 
-<?php include('header.php'); ?>
+
 
 <div class="div0">
   <h2>UNDIAN</h2>
@@ -89,8 +89,8 @@ if (isset($_POST["submit"]))
                 <td align="right"><b>CALON-CALON</b></td>
                 <td>
                   <?php
-                  $query = "SELECT * FROM pengundi";
-                  // $query = "SELECT DISTINCT idcalon, namacalon, gambar FROM calon WHERE jawatan = '$jawatan'";
+                  // $query = "SELECT * FROM calon";
+                  $query = "SELECT DISTINCT idcalon, namacalon, gambar FROM calon WHERE jawatan = '$jawatan'";
                   $result = mysqli_query($con, $query);
 
                   while($data = mysqli_fetch_array($result)){

@@ -1,5 +1,6 @@
+    
     <?php
-      include("header.php");
+    include("header.php");
     ?>
 	<br>
 <div class="div0">

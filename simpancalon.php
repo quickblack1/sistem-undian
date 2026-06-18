@@ -5,6 +5,7 @@ require('confiq.php');
 
 // Check if image file is a actual image or fake image
 if(isset($_POST['submit'])) {
+  
   $filepath = 'gambarcalon/' . $_FILES['gambar']['name'];
   if(move_uploaded_file($_FILES['gambar']['tmp_name'], $filepath)){
     echo "";
@@ -18,15 +19,16 @@ if(isset($_POST['submit'])) {
   //$isUploaded=move_uploaded_file($_FILES["gambar"]["tmp_name"],$uploadPath);
 
   $idcalon = $_POST['idcalon'];
+  $namacalon = $_POST['namapengundi'];
   $nokp = $_POST['nokp'];
-  $namacalon = $_POST['namacalon'];
   $idadmin= $_POST['idadmin'];
   $jawatan = $_POST['jawatan'];
-
+  
   //masukkan data dalam pangkalan data
-  $sql="INSERT INTO calon VALUES ('$idcalon', '$nokp', '$namacalon','$idadmin','$filepath', '$jawatan')";
-
+  $sql="INSERT INTO calon VALUES ('$idcalon', '$nokp', '$idadmin','$filepath', '$jawatan')";
   $result = mysqli_query($con, $sql);
+
+
   
   ?>
   <h2>STATUS TAMBAH CALON</h2>
