@@ -48,8 +48,8 @@
  	<form action ="" method="POST">
  		<table class="table2">
  			<tr>
- 				<th class="th0"> WELCOME</td>
- 				<th class="th0"> LOGIN</td>
+ 				<th class="th0">Selamat Datang</td>
+ 				<th class="th0">Log Masuk</td>
  			</tr>
  			<tr>
  				<td class="td0">

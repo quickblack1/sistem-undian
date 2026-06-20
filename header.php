@@ -7,7 +7,7 @@
   
   <body>
     <div class="div5">
-      <img class="" src="imej/banner.png">
+      <img class="" src="imej/banner.png" width="100%">
     </div>
 	  
 	  <!-- <div id="google_translate_element"></div> -->
@@ -50,21 +50,23 @@
         ?>
           <a href="paparsemuacalon.php" class="<?= ($current_page == 'paparsemuacalon.php') ? 'active' : '' ?>">PAPAR SEMUA CALON</a>
           <a href="pilihundi.php" class="<?= ($current_page == 'pilihundi.php') ? 'active' : '' ?>">UNDIAN</a>
-          <a href="result.php" class="<?= ($current_page == 'result.php') ? 'active' : '' ?>">KEPUTUSAN UNDIAN</a>
+          <a href="laporan.php" class="<?= ($current_page == 'laporan.php') ? 'active' : '' ?>">KEPUTUSAN UNDIAN</a>
           <a href="logout.php">LOGOUT</a>
           
-          <div align="center">
+          <div class="div6">
             <div class="row" style="color: black"><b><i>SELAMAT DATANG<br> <?php echo $_SESSION['namapengundi']; ?></i></b></div>
           </div>
         <?php
         } elseif (isset($_SESSION["idadmin"])){
           ?>
+            <a href="paparsemuaahli.php" class="<?= ($current_page == 'paparsemuaahli.php') ? 'active' : '' ?>">AHLI</a>
+            <a href="paparsemuacalon.php" class="<?= ($current_page == 'paparsemuacalon.php') ? 'active' : '' ?>">CALON</a>
             <a href="borangcalon.php" class="<?= ($current_page == 'borangcalon.php') ? 'active' : '' ?>">TAMBAH CALON</a>
-            <a href="paparsemuaahli.php" class="<?= ($current_page == 'paparsemuaahli.php') ? 'active' : '' ?>">PAPAR SEMUA AHLI</a>
+            
             <a href="cariadmin.php" class="<?= ($current_page == 'cariadmin.php') ? 'active' : '' ?>">CARIAN/KEMASKINI CALON</a>
             <a href="cariundi.php" class="<?= ($current_page == 'cariundi.php') ? 'active' : '' ?>">CARIAN/PADAM UNDIAN</a>
             <a href="laporan.php" class="<?= ($current_page == 'laporan.php') ? 'active' : '' ?>">LAPORAN</a>
-            <a href="import.php" class="<?= ($current_page == 'import.php') ? 'active' : '' ?>">IMPORT CALON</a>
+            <a href="import.php" class="<?= ($current_page == 'import.php') ? 'active' : '' ?>">IMPORT AHLI</a>
             <a href="logoutadmin.php">LOGOUT</a>
  
             <div align="center">    

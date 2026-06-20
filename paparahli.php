@@ -24,10 +24,21 @@ if (isset($_GET['nokp'])){
 
 $sql = "SELECT idcalon FROM calon ORDER BY idcalon DESC LIMIT 1";
 $result = mysqli_query($con, $sql);
-while ($row = mysqli_fetch_array($result)){
-    $idcalon = $row['idcalon'];
-    $idcalon = ++$idcalon;
+$rowCount = mysqli_num_rows($result);
+
+if ($rowCount == 0){
+    $idcalon = "C001";
 }
+else {
+    while ($row = mysqli_fetch_array($result)){
+        $idcalon = $row['idcalon'];
+        $idcalon = ++$idcalon;
+    }
+}
+// while ($row = mysqli_fetch_array($result)){
+//     $idcalon = $row['idcalon'];
+//     $idcalon = ++$idcalon;
+// }
 
 
 ?>
@@ -78,7 +89,7 @@ while ($row = mysqli_fetch_array($result)){
                     $gambar = $row2['gambar'];
                     if (isset($gambar)){
                         ?>
-                        <img src="<?php echo $gambar; ?>" alt="">
+                        <img src="<?php echo $gambar; ?>" alt="" width="100px">
                         <?php
                     } 
                     else {
@@ -96,10 +107,10 @@ while ($row = mysqli_fetch_array($result)){
                 <td>
                     <select name="jawatan" id="" required>
                         <option value="">PILIH JAWATAN</option>
-                        <option value="Pengerusi">PENGERUSI</option>
-                        <option value="Naib Pengerusi 1">NAIB PENGERUSI 1</option>
-                        <option value="Naib Pengerusi 2">NAIB PENGERUSI 2</option>
-                        <option value="Setiausaha">SETIAUSAHA</option>
+                        <option value="1Pengerusi">PENGERUSI</option>
+                        <option value="2Naib Pengerusi 1">NAIB PENGERUSI 1</option>
+                        <option value="3Naib Pengerusi 2">NAIB PENGERUSI 2</option>
+                        <option value="4Setiausaha">SETIAUSAHA</option>
                     </select>
                 </td>
             </tr>

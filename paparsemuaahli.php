@@ -4,7 +4,6 @@ require('confiq.php');
 <?php
 include("header.php");
 ?>
-  <center>
 <h2>MAKLUMAT AHLI</h2>
 
 <?php
@@ -13,28 +12,26 @@ $query="SELECT * FROM pengundi";
 
 
 $result=mysqli_query($con, $query);
-
-	echo "<table border='1' cellpadding='2' cellspacing='2'>";
-echo "<tr bgcolor='pink' align='center'>
- <style>
-      table {
-        border-collapse: collapse;
-        table-layout: fixed;
-        width: 400px;
-      }
-      table td {
-        border: solid 1px #666;
-        width: 200px;
-        word-wrap: break-word;
-      }
-    </style>
-		   <td> <b> NO. KP</b> </td>
-		   <td> <b> Nama</b> </td>
-           <td><b>gambar </b></td>
-           
-
-     </tr>";
-     WHILE($rekod=mysqli_fetch_array($result)){
+?>
+<table class='table5'>
+  <tr>
+    <th>Bil.</th>
+		<th>
+      <b>No. KP</b>
+    </th>
+		<th>
+      <b>Nama</b>
+    </th>
+    <th>Jantina</th>
+    <th>Kelas</th>
+    <th>
+      <b>Gambar</b>
+    </th>
+  </tr>
+  <?php
+    $bil = 0;
+     while($rekod=mysqli_fetch_array($result)){
+      $bil++;
 	    $nokp = $rekod["nokp"];
       $sql = "SELECT gambar FROM calon WHERE nokp = '$nokp'";
       $result2=mysqli_query($con, $sql);
@@ -42,19 +39,29 @@ echo "<tr bgcolor='pink' align='center'>
       while($row=mysqli_fetch_array($result2)){
         $gambar = $row["gambar"];
       }
-
-  echo "<tr align='center'>
-  			<td>{$rekod["nokp"]}</td>
-  			<td><a href='paparahli.php?nokp=$nokp'>{$rekod["namapengundi"]}</a></td>
-        <td>
-         
-          <img src='$gambar' height=200 width=200>
-        
-        </td>
-       <td><a href='padamahli.php?nokp={$rekod["nokp"]}'><button>Padam </button></a></td>
-              
-       </tr>";
+  ?>
+  <tr>
+    <td style="text-align: right"><?php echo $bil; ?></td>
+  	<td><?php echo $rekod["nokp"]; ?></td>
+  	<td class="td1"><a href='paparahli.php?nokp=<?php echo $rekod["nokp"]; ?>'><?php echo $rekod["namapengundi"]; ?></a></td>
+    <td style="text-align: center"><?php echo $rekod["jantina"]; ?></td>
+    <td style="text-align: center"><?php echo $rekod["kelas"]; ?></td>
+    <td>
+      <?php
+      if (isset($gambar)){
+        echo "Tiada gambar.";
+      } else {
+      ?>
+        <img src='$gambar' width='200px'>
+      <?php
+      }
+      ?>
       
+    </td>
+    <td><a href='padamahli.php?nokp=<?php echo $rekod["nokp"]; ?>'><button>Padam </button></a></td>
+              
+  </tr>
+<?php 
 }
 echo "</table>";
 

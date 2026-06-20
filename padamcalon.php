@@ -12,7 +12,8 @@ echo $rekod;
 //exit;
 
 if ($rekod == 1) {
-	echo "<script>alert('Calon telah berjaya dipadam.'); window.location='paparahli.php';</script>";
+	// echo "<script>alert('Calon telah berjaya dipadam.'); window.location='paparahli.php';</script>";
+	echo "<script>alert('Calon telah berjaya dipadam.'); window.location='paparsemuacalon.php';</script>";
     exit();
     //include "padam.php"; // jika berjaya padam
 } else {
@@ -21,7 +22,8 @@ if ($rekod == 1) {
 	echo "<script type='text/javascript'>alert('$message1');</script>";
 	//echo "<h4> Katalaluan tidak sah, sila cuba sekali lagi</h4>";
 	//include "logmasuk.php";
-	header('refresh:1;URL=./paparahli.php');
+	// header('refresh:1;URL=./paparahli.php');
+	header('refresh:1;URL=./paparsemuacalon.php');
     
 }
 ?>

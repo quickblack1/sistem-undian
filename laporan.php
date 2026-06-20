@@ -1,180 +1,66 @@
 <?php
 include('confiq.php');
-//include auth.php file on all secure pages
-// include("menuadmin.php");
+session_start();
+if (isset($_SESSION['nokp'])){
+    include('authahli.php');
+} else {
+    include('authadmin.php');
+}
+
 include("header.php");
-// include("resultadmin.php");
 ?>
 <h2>Keputusan Undian Terkini</h2>
 <?php
-
-$sql = "SELECT jawatan FROM undian GROUP BY jawatan";
-$result = mysqli_query($con, $sql);
-while($row = mysqli_fetch_array($result)){
+$sql1 = "SELECT jawatan FROM calon GROUP BY jawatan ORDER BY jawatan";
+$result1 = mysqli_query($con, $sql1);
+while($row1 = mysqli_fetch_array($result1)){
+    $jawatan = $row1['jawatan'];
     ?>
-
-    <div>
-        <?php
-            $jawatan = $row['jawatan'];
-            echo "<h3>".$jawatan."</h3>";
-            $query = "SELECT calon.namacalon,calon.idcalon, COUNT(undian.idcalon) AS jumlah_undi
-                    FROM undian
-                    INNER JOIN calon ON undian.idcalon = calon.idcalon
+    <div class="div7">
+        <h3><?php echo substr($jawatan, 1); ?></h3>
+        <table class='table5'>
+            <tr>
+                <th>ID Calon</th>
+                <th>Nama Calon</th>
+                <th>Kelas</th>
+                <th>Jumlah Undi</th>
+            </tr>
+            <?php
+            $sql2 = "SELECT calon.idcalon, pengundi.namapengundi, pengundi.kelas, COUNT(undian.idcalon) AS jumlah_undi
+                    FROM calon
+                    INNER JOIN pengundi
+                        ON calon.nokp = pengundi.nokp
+                    LEFT JOIN undian
+                        ON calon.idcalon = undian.idcalon
+                        AND undian.jawatan = calon.jawatan
                     WHERE calon.jawatan = '$jawatan'
-                    GROUP BY undian.idcalon
+                    GROUP BY calon.idcalon, pengundi.namapengundi
                     ORDER BY jumlah_undi DESC";
 
-            $result2 = mysqli_query($con, $query);
-
-echo "";
-
-
-
-echo "<table class='table5'>
-        <tr>
-            <th>Nama Calon</th>
-            <th>ID Calon</th>
-            <th>Jumlah Undi</th>
-        </tr>";
-
-while($row2 = mysqli_fetch_array($result2)){
-    echo "<tr>
-            <td>".$row2['namacalon']."</td>
-            <td>".$row2['idcalon']."</td>
-            <td>".$row2['jumlah_undi']."</td>
-          </tr>";
-}
-echo "</table>";
-        ?>
+            $result2 = mysqli_query($con, $sql2);
+            while($row2 = mysqli_fetch_array($result2)){
+                $idcalon = $row2['idcalon'];
+                $kelas = $row2['kelas'];
+                $namaCalon = $row2['namapengundi'];
+                $jumlahUndi = $row2['jumlah_undi'];
+                ?>
+                <tr>
+                    <td><?php echo $idcalon; ?></td>
+                    <td class="td1"><?php echo $namaCalon; ?></td>
+                    <td><?php echo $kelas; ?></td>
+                    <td><?php echo $jumlahUndi; ?></td>
+                </tr>
+                <?php
+            }
+            ?>
+            
+        </table>
     </div>
     <?php
-}  
-
-
-?>
-
-
-<br><br>
-<center>
-  <a href="laporan.php"><button onClick="window.print();">Cetak</button>
-  </a>
-
-<br>
-<br><br>
-
-<center>
-<form name="form1" action="laporan.php" method="get">
-<input name="list" type="hidden" value="0">
-<input type="submit" value="Laporan Ringkas">
-</form>
-
-<br>
-    
-<form name="form2" action="laporan.php" method="get">
-<input name="list" type="hidden" value="1">
-<input type="submit" value="Laporan Detail">  
-</form>
-
-</center>
-
- 
-<?php
-error_reporting(0);
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "dbundi";
-$tblname = "undian";
- 
-$chk = $_GET['list'];
- 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) 
-{  die("Connection failed: " . mysqli_connect_error());  }
-
-
-if(isset($chk))
-{
- if($chk == 1)
- {
-    $sql = "SELECT * FROM undian ORDER BY idcalon ASC";
-    $result = mysqli_query($conn, $sql);
- 
-    if (mysqli_num_rows($result) > 0) 
-    {
-     echo "<table class='table5'>";
-    echo "<tr bgcolor='yellow' align='center'>
-      
-        <td> <b> idundian </b> </td>
-        <td> <b> nokp </b> </td>      
-        <td> <b> idcalon</b> </td>
-        <td> <b> tarikh </b> </td>
-        <td> <b> masa </b> </td>
-        
-        
-        
-     </tr>";
-     // output data of each row
-     while($row = mysqli_fetch_assoc($result))
-      {  
-         
-
-      
-   
-
-  echo "<tr align='center'>
-  
-        <td>{$row["idundian"]}</td>
-            <td>{$row["nokp"]}</td>
-            
-             <td>{$row["idcalon"]}</td>
-             <td>{$row["tarikh"]}</td>
-             <td>{$row["masa"]}</td>
-            
-       </tr>";
-      
 }
-echo "</table>";
-
-
-
-
-      }
-    
-    
-   else 
-     { echo "0 results";  }
- }
-    
-elseif($chk == 0)
- {
-    $sql = "SELECT * FROM undian";
-    $result = mysqli_query($conn, $sql);
- 
-    if (mysqli_num_rows($result) > 0) 
-    {
-        // output data of each row
-        while($row = mysqli_fetch_assoc($result)) 
-        { 
-            echo "<center>";
-            echo $row["idundian"]."----->".$row["nokp"]."----->".$row["idcalon"]."<br>";
-            echo "<center>";            
-        }
-    } 
-           
-    else 
-    {  echo "No results !"; }
- }
-}
-
-else
-mysqli_close($conn);
 ?>
+<div style="text-align: center;">
+    <a href="laporan.php"><button onClick="window.print();">Cetak</button></a>
+</div>
 
-<br>
- <a href="laporan.php"><button onClick="window.print();">CETAK</button>
-  </a>
 <?php include("footer.php"); ?>

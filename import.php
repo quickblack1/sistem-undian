@@ -43,8 +43,7 @@ if (isset($_POST['btn-upload'])){
   $jenisfail = pathinfo($namafail,PATHINFO_EXTENSION);
 
   //menguji jika fail yang diupload tidak kosong dan berformat csv
-  if($_FILES["file"]["size"] > 0 AND $jenisfail=="csv")
-    {
+  if($_FILES["file"]["size"] > 0 AND $jenisfail=="csv"){
       //arahan untuk membaca fail yang diupload
       $failyangdataingindiupload = fopen($namafailsementara, "r");
       //membaca fail yang diupload cell demi cell.
@@ -52,21 +51,30 @@ if (isset($_POST['btn-upload'])){
       //mengganggap itu cell yang berikutnya
       while (($getData = fgetcsv($failyangdataingindiupload, 10000, ",")) !== FALSE)
       {
+        $nokp = $getData[0];
+        echo $nokp;
+        $namapengundi = $getData[1];
+        $getData[2];
+        echo $getData[3];
+        echo $getData[4];
+        // exit();
         //memasukkan data ke dalam pangkalan data satu demi satu 
-        $result = mysqli_query($con, "INSERT INTO calon (idcalon,namacalon, idadmin, gambar) VALUES ('".$getData[0]."','".$getData[1]."','".$getData[2]."','".$getData[3]."')");
-        //memaklumkan kepada pengguna yang data telah diupload 
-        //dan kembali ke page import
-        ?>
-        <script>
-          alert('Import fail data berjaya.');
-          window.location = 'paparcalon.php';
-        </script>
-                  <?php
+        //$result = mysqli_query($con, "INSERT INTO calon (idcalon,namacalon, idadmin, gambar) VALUES ('".$getData[0]."','".$getData[1]."','".$getData[2]."','".$getData[3]."')");
+        $sql = "INSERT INTO pengundi VALUES ('$getData[0]', '$getData[1]', '$getData[2]', '$getData[3]', '$getData[4]')";
+        $result = mysqli_query($con, $sql);
+        
       } //tutup while
-              
+      ?>
+      //memaklumkan kepada pengguna yang data telah diupload 
+      //dan kembali ke page import
+      <script>
+        alert('Import fail data berjaya.');
+        window.location = 'paparsemuaahli.php';
+      </script>
+      <?php  
       fclose($failyangdataingindiupload);	
               
-    }//tutup if fail tidak kosong dan berformat csv 
+  }//tutup if fail tidak kosong dan berformat csv 
 
   //jika fail bukan berformat csv, kembali ke fail import
   else

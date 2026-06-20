@@ -12,15 +12,17 @@ date_default_timezone_set("Asia/Kuala_Lumpur");
 $tarikh = date("Y-m-d");
 $masa = date("H:i:s");
 
-if (isset($_POST["submit"]))
-  {
-    
+if (isset($_POST["submit"])){
+       
+
     //sql buat query
-    $nokp = $_POST['nokp'];
+    $nokpCalon = $_POST['nokp'];
     $idcalon = $_POST['idcalon'];
     $tarikh = $_POST['tarikh'];
     $masa = $_POST['masa'];
     $jawatan = $_POST['jawatan'];
+
+    
 
     // echo $nokp."<br>";
     // echo $idcalon."<br>";
@@ -39,6 +41,13 @@ if (isset($_POST["submit"]))
     $query = "INSERT INTO undian (nokp, idcalon, tarikh, masa, jawatan) 
               VALUES ('$nokp','$idcalon','$tarikh','$masa', '$jawatan')";
     $result = mysqli_query($con, $query);
+    if ($result == 1){
+      ?>
+      <script>
+        alert("Anda telah membuat undian. Terima Kasih.");
+      </script>
+      <?php
+    }
   }
 ?>
 
@@ -64,11 +73,6 @@ if (isset($_POST["submit"]))
     </table>
 </div>
     
-    
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-    
     <?php 
     $sql1 = "SELECT jawatan
             FROM calon
@@ -78,7 +82,7 @@ if (isset($_POST["submit"]))
       $jawatan = $row1['jawatan'];
       ?>
       <div class="div2">
-        <h3>Jawatan: <?php echo $jawatan; ?></h3>
+        <h3>Jawatan: <?php echo substr($jawatan, 1); ?></h3>
         <form action="" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="nokp" value="<?php echo $nokp; ?>">
           <input type="hidden" name="jawatan" value="<?php echo $jawatan; ?>">
@@ -88,18 +92,23 @@ if (isset($_POST["submit"]))
               <tr>
                 <td align="right"><b>CALON-CALON</b></td>
                 <td>
+                  
                   <?php
-                  // $query = "SELECT * FROM calon";
-                  $query = "SELECT DISTINCT idcalon, namacalon, gambar FROM calon WHERE jawatan = '$jawatan'";
+                  // $query = "SELECT * FROM calon WHERE jawatan = '$jawatan'";
+                  $query = "SELECT calon.*, pengundi.namapengundi
+                  FROM calon
+                  INNER JOIN pengundi ON calon.nokp = pengundi.nokp
+                  WHERE jawatan = '$jawatan'";
                   $result = mysqli_query($con, $query);
-
+                  //echo $result;
+                  //exit();
                   while($data = mysqli_fetch_array($result)){
                     
                     ?>
                     <label class="label0">
                             <input type='radio' name='idcalon' value="<?php echo $data['idcalon']; ?>" required><br>
                             <img class="img1" src="<?php echo $data['gambar']; ?>" width='80' height='100'><br>
-                            <?php echo $data['namacalon']; ?>
+                            <?php echo $data['namapengundi']; ?>
                           </label>
                     <?php
                   }
@@ -119,7 +128,7 @@ if (isset($_POST["submit"]))
                     <?php
                   } else {
                     ?>
-                    <div>Undian telah dibuat. <a class="a01" href="result.php">Papar keputusan.</a></div>
+                    <div>Undian telah dibuat. <a class="a01" href="laporan.php">Papar keputusan.</a></div>
                     <?php
                   }
                   ?>

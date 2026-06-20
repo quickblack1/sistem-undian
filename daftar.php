@@ -97,12 +97,12 @@ function togglePass() {
 <form onsubmit="return validateForm()" action="" method="POST">
   <table class="table2">
     <tr class="">
-      <th class="th0"> Welcome</td>
+      <th class="th0"> Selamat Datang</td>
       <th class="th0"> Pendaftaran Pengundi Baru</td>
     </tr>
     <tr>
       <td class="td0">
-        <img src="imej/logo.png" width="300" height="125" title="logo" alt="logo" />
+        <img src="imej/logo.png" title="logo" alt="logo" />
       </td>
       <td class="td0">
         <table>
@@ -147,6 +147,7 @@ function togglePass() {
                 <option value="5F" <?php if (isset($_POST['kelas']) == '5F'){ echo 'selected'; } ?> >5 FUTURISTIC</option>
                 <option value="5G" <?php if (isset($_POST['kelas']) == '5G'){ echo 'selected'; } ?> >5 GIGABYTE</option>
                 <option value="5H" <?php if (isset($_POST['kelas']) == '5H'){ echo 'selected'; } ?> >5 HOLOGRAM</option>
+                <option value="1A" <?php if (isset($_POST['kelas']) == '1A'){ echo 'selected'; } ?> >1 ALPHA</option>
               </select>
             </td>
           </tr>

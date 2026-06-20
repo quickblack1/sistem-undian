@@ -15,10 +15,13 @@ $result1 = mysqli_query($con, $sql);
 while($row1 = mysqli_fetch_array($result1)){
   $jawatan = $row1['jawatan'];
   echo "<h3>".$jawatan."</h3>";
+  echo "disini";
+  exit();
 
-  $query = "SELECT calon.namacalon, calon.gambar, COUNT(undian.idcalon) AS jumlah_undi
+  $query = "SELECT pengundi.namapengundi, calon.gambar, COUNT(undian.idcalon) AS jumlah_undi
           FROM undian
-          inner JOIN calon ON undian.idcalon = calon.idcalon
+          INNER JOIN calon ON undian.idcalon = calon.idcalon
+          INNER JOIN pengundi ON calon.nokp = pengundi.kp
           WHERE undian.jawatan = '$jawatan'
           GROUP BY undian.idcalon
           ORDER BY jumlah_undi DESC";
