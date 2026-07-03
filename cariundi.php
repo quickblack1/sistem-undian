@@ -53,7 +53,7 @@ if (isset($_POST['submit'])){
                 <td><?php echo $idcalon; ?></td>
                 <td><?php echo $tarikh; ?></td>
                 <td><?php echo $masa; ?></td>
-                <td><?php echo substr($jawatan, 1); ?></td>
+                <td><?php echo substr($jawatan, 2); ?></td>
                 <td>
                     <a href="padamundi.php?idundian=<?php echo $idundian; ?>"><button>Padam </button></a>
                     
