@@ -1,6 +1,15 @@
 <?php
 //include auth.php file on all secure pages
-include("authadmin.php");
+if (isset($_SESSION['nokp'])){
+    include("authahli.php");
+    $idadmin = NULL;
+}
+if (isset($_SESSION['idadmin'])){
+    include("authadmin.php");
+    $idadmin = $_SESSION['idadmin'];
+}
+
+
 
 require('confiq.php');
 $alert = "";
@@ -47,18 +56,6 @@ else {
         include("header.php");
         ?>
         <div class="">
-            <table class="table5">
-            <tr>
-                <th>No. KP Calon: </th>
-                <td>
-                    <form action="" method="get">
-                        <input type='text' name='nokp' placeholder='sila masukkan no. kp calon' required>
-                        <button type="submit">Cari</button>
-                        <?php echo $alert; ?>
-                    </form>
-                </td>
-            </tr>
-        </table>
 
 
         <h2>MAKLUMAT AHLI</h2>
@@ -67,18 +64,9 @@ else {
             <input type="hidden" name="idcalon" value="<?php echo $idcalon; ?>">
             <input type="hidden" name="nokp" value="<?php echo $nokp; ?>">
             <input type="hidden" name="namapengundi" value="<?php echo $namapengundi; ?>">
-            <input type="hidden" name="idadmin" value="<?php echo $_SESSION['idadmin']; ?>">
+            <input type="hidden" name="idadmin" value="<?php echo $idadmin; ?>">
+            
         <table class="table6">
-            <tr>
-                <td>NO. KP AHLI </td>
-                <td><?php echo $nokp; ?></td>
-            </tr>
-
-            <tr>
-                <td>NAMA AHLI </td>
-                <td><?php echo $namapengundi; ?></td>
-
-            </tr>
             <tr>
                 <td>GAMBAR</td>
                 <td>
@@ -90,6 +78,7 @@ else {
                     if (isset($gambar)){
                         ?>
                         <img src="<?php echo $gambar; ?>" alt="" width="100px">
+                        <input type="hidden" name="gambar" value="<?php echo $gambar; ?>">
                         <?php
                     } 
                     else {
@@ -101,22 +90,33 @@ else {
                     
                 </td>
             </tr>
+            <tr>
+                <td>NO. KP AHLI </td>
+                <td><?php echo $nokp; ?></td>
+            </tr>
+
+            <tr>
+                <td>NAMA AHLI </td>
+                <td><?php echo $namapengundi; ?></td>
+
+            </tr>
+            
 
             <tr>
                 <td>JAWATAN</td>
                 <td>
                     <select name="jawatan" id="" required>
                         <option value="">PILIH JAWATAN</option>
-                        <option value="1Pengerusi">PENGERUSI</option>
-                        <option value="2Naib Pengerusi 1">NAIB PENGERUSI 1</option>
-                        <option value="3Naib Pengerusi 2">NAIB PENGERUSI 2</option>
-                        <option value="4Setiausaha">SETIAUSAHA</option>
+                        <option value="01Pengerusi">PENGERUSI</option>
+                        <option value="02Naib Pengerusi 1">NAIB PENGERUSI 1</option>
+                        <option value="03Naib Pengerusi 2">NAIB PENGERUSI 2</option>
+                        <option value="04Setiausaha">SETIAUSAHA</option>
                     </select>
                 </td>
             </tr>
             <tr>
                 <td></td>
-                <td><button type='submit' name='submit'>Daftar Sebagai Calon</button> <button type='reset' >Padam</button></td>
+                <td><button type='submit' name='submit'>Daftar Sebagai Calon</button></td>
             </tr>
         </table>
         </form>

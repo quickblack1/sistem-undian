@@ -7,7 +7,7 @@
   
   <body>
     <div class="div5">
-      <img class="" src="imej/banner.png" width="100%">
+      <img class="" src="imej/banner.png" height="200" width="100%">
     </div>
 	  
 	  <!-- <div id="google_translate_element"></div> -->
@@ -48,6 +48,7 @@
         session_start();
         if (isset($_SESSION["nokp"])){
         ?>
+          <a href="paparsemuaahli.php" class="<?= ($current_page == 'paparsemuaahli.php') ? 'active' : '' ?>">AHLI</a>
           <a href="paparsemuacalon.php" class="<?= ($current_page == 'paparsemuacalon.php') ? 'active' : '' ?>">PAPAR SEMUA CALON</a>
           <a href="pilihundi.php" class="<?= ($current_page == 'pilihundi.php') ? 'active' : '' ?>">UNDIAN</a>
           <a href="laporan.php" class="<?= ($current_page == 'laporan.php') ? 'active' : '' ?>">KEPUTUSAN UNDIAN</a>
@@ -61,7 +62,7 @@
           ?>
             <a href="paparsemuaahli.php" class="<?= ($current_page == 'paparsemuaahli.php') ? 'active' : '' ?>">AHLI</a>
             <a href="paparsemuacalon.php" class="<?= ($current_page == 'paparsemuacalon.php') ? 'active' : '' ?>">CALON</a>
-            <a href="borangcalon.php" class="<?= ($current_page == 'borangcalon.php') ? 'active' : '' ?>">TAMBAH CALON</a>
+            <!-- <a href="borangcalon.php" class="<?= ($current_page == 'borangcalon.php') ? 'active' : '' ?>">TAMBAH CALON</a> -->
             
             <a href="cariadmin.php" class="<?= ($current_page == 'cariadmin.php') ? 'active' : '' ?>">CARIAN/KEMASKINI CALON</a>
             <a href="cariundi.php" class="<?= ($current_page == 'cariundi.php') ? 'active' : '' ?>">CARIAN/PADAM UNDIAN</a>

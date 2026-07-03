@@ -15,10 +15,14 @@ require('confiq.php');
 
 	
 	$idcalon=$_GET['idcalon'];
-	$namacalon=$_GET['namacalon'];
+	$nokp = $_GET['nokp'];
+	$namapengundi=$_GET['namacalon'];
+	$kelas = $_GET['kelas'];
+
 	//ambil data untuk update
-	
- $query = "UPDATE calon SET idcalon = '$idcalon',namacalon = '$namacalon'WHERE idcalon = '$idcalon'" ;
+
+$query = "UPDATE pengundi SET namapengundi = '$namapengundi', kelas = '$kelas' WHERE nokp = '$nokp'";
+//$query = "UPDATE calon SET idcalon = '$idcalon',namacalon = '$namacalon' WHERE idcalon = '$idcalon'" ;
 $rekod=mysqli_query($con,$query);
 
 if ($rekod) {

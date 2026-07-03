@@ -8,7 +8,7 @@
 <?php 
 require('confiq.php');
 
-echo"
+?>
 
 <form action='cariadmin1.php' method='GET' enctype='multipart/form-data'>
 <table width='35%' align='center'>
@@ -16,22 +16,24 @@ echo"
 <td align='right'bgcolor='' > Nama Calon </td>
 <td>
     <select name='idcalon' required>
-    <option disabled selected value>sila Pilih nama calon</option>";
-
-                        //statement SQL untuk memilih semua field yang terdapat didalam table bilik
-                        $query="SELECT * FROM calon ";
-                        $result=mysqli_query($con,$query);
-                        WHILE($data=mysqli_fetch_array($result)){
-                        //while($data=mysqli_fetch_array($sql)){
-                        echo"<option value='".$data['idcalon']."'>".$data['namacalon']."</option>";
-
-                        }
-                    echo"</select>";		
-	?>	
+        <option disabled selected value>Sila Pilih nama calon</option>";
+            <?php
+            //statement SQL untuk memilih semua field yang terdapat didalam table bilik
+            $query="SELECT calon.*, pengundi.namapengundi
+                    FROM calon 
+                    LEFT JOIN pengundi
+                    ON calon.nokp = pengundi.nokp";
+            $result=mysqli_query($con,$query);
+            while($data=mysqli_fetch_array($result)){
+                $idcalon = $data['idcalon'];
+                $nokp = $data['nokp'];
+                $namapengundi = $data['namapengundi'];
+                ?>
+                <option value="<?php echo $idcalon; ?>"><?php echo $namapengundi; ?></option>
+                <?php
+            }
+            ?>	
+    </select>
     <input type="submit" Name="submit" Value="Cari"></p>
 </tr>
 </center>
-
-
-
-

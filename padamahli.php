@@ -8,7 +8,7 @@ $query = "DELETE FROM pengundi WHERE nokp = '$nokp'";
 $rekod = mysqli_query($con, $query);
 
 if ($rekod == 1) {
-	echo "<script>alert('Calon telah berjaya dipadam.'); window.location='paparahli.php';</script>";
+	echo "<script>alert('Calon telah berjaya dipadam.'); window.location='paparsemuaahli.php';</script>";
     //exit();
     //include "padam.php"; // jika berjaya padam
 } else {

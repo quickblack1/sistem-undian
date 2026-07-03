@@ -38,7 +38,7 @@ if (isset($_POST["submit"])){
     //$result = mysqli_query($con, $semak);
     //$row = mysqli_fetch_assoc($result);
 
-    $query = "INSERT INTO undian (nokp, idcalon, tarikh, masa, jawatan) 
+    $query = "INSERT INTO undian (nokpPengundi, idcalon, tarikh, masa, jawatan) 
               VALUES ('$nokp','$idcalon','$tarikh','$masa', '$jawatan')";
     $result = mysqli_query($con, $query);
     if ($result == 1){
@@ -82,7 +82,7 @@ if (isset($_POST["submit"])){
       $jawatan = $row1['jawatan'];
       ?>
       <div class="div2">
-        <h3>Jawatan: <?php echo substr($jawatan, 1); ?></h3>
+        <h3>Jawatan: <?php echo substr($jawatan, 2); ?></h3>
         <form action="" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="nokp" value="<?php echo $nokp; ?>">
           <input type="hidden" name="jawatan" value="<?php echo $jawatan; ?>">
@@ -95,7 +95,7 @@ if (isset($_POST["submit"])){
                   
                   <?php
                   // $query = "SELECT * FROM calon WHERE jawatan = '$jawatan'";
-                  $query = "SELECT calon.*, pengundi.namapengundi
+                  $query = "SELECT calon.*, pengundi.namapengundi, pengundi.kelas
                   FROM calon
                   INNER JOIN pengundi ON calon.nokp = pengundi.nokp
                   WHERE jawatan = '$jawatan'";
@@ -108,7 +108,8 @@ if (isset($_POST["submit"])){
                     <label class="label0">
                             <input type='radio' name='idcalon' value="<?php echo $data['idcalon']; ?>" required><br>
                             <img class="img1" src="<?php echo $data['gambar']; ?>" width='80' height='100'><br>
-                            <?php echo $data['namapengundi']; ?>
+                            <?php echo $data['namapengundi']; ?><br>
+                            <?php echo $data['kelas']; ?>
                           </label>
                     <?php
                   }
@@ -119,7 +120,7 @@ if (isset($_POST["submit"])){
                 <td></td>
                 <td align="center">
                   <?php
-                  $query = "SELECT * FROM undian WHERE nokp = '$nokp' AND jawatan = '$jawatan'";
+                  $query = "SELECT * FROM undian WHERE nokpPengundi = '$nokp' AND jawatan = '$jawatan'";
                   $result = mysqli_query($con, $query);
                   $rowcount = mysqli_num_rows($result);
                   if ($rowcount == 0){
@@ -128,7 +129,7 @@ if (isset($_POST["submit"])){
                     <?php
                   } else {
                     ?>
-                    <div>Undian telah dibuat. <a class="a01" href="laporan.php">Papar keputusan.</a></div>
+                    <div>Anda telah membuat undian. <a class="a01" href="laporan.php">Papar keputusan.</a></div>
                     <?php
                   }
                   ?>

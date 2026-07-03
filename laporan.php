@@ -17,7 +17,7 @@ while($row1 = mysqli_fetch_array($result1)){
     $jawatan = $row1['jawatan'];
     ?>
     <div class="div7">
-        <h3><?php echo substr($jawatan, 1); ?></h3>
+        <h3><?php echo substr($jawatan, 2); ?></h3>
         <table class='table5'>
             <tr>
                 <th>ID Calon</th>

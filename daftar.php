@@ -112,7 +112,7 @@ function togglePass() {
           </tr>
           <tr>
             <td> Nama pengundi </td>
-            <td><input name="namapengundi" id="namapengundi" type="text" oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'')" value="<?php echo isset($_POST['namapengundi']) ? htmlspecialchars($_POST['namapengundi']) : ''; ?>" placeholder='nama penuh' required></td>
+            <td><input name="namapengundi" id="namapengundi" type="text" oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'').toUpperCase();" value="<?php echo isset($_POST['namapengundi']) ? htmlspecialchars($_POST['namapengundi']) : ''; ?>" placeholder='nama penuh' required></td>
           </tr>
           <tr>
             <td>Kata laluan</td>

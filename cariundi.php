@@ -4,37 +4,69 @@ include("header.php");
 //require('db.php');
 //include("menuadmin.php");
 
+$sql = "SELECT * FROM undian";
+$result = mysqli_query($con, $sql);
+
+if (isset($_POST['submit'])){
+    $idundian = $_POST['idundian'];
+    echo $idundian;
+    //exit();
+    $sql2 = "DELETE FROM undian WHERE $idundian = $idundian";
+    $result2 = mysqli_query($con, $sql2);
+    if ($result2 == 1) {
+	    echo "<script>alert('Undian telah berjaya dipadam.'); window.location='cariundi.php';</script>";
+        exit();
+    }
+}
+
+
 ?>
 <tr>
 </tr>
 <tr>
 <center>
-<?php 
+    <h2>Undian</h2>
 
-echo"
+    <table class="table5">
+        <tr>
+            <th>ID Undian</th>
+            <th>No KP Pengundi</th>
+            <th>ID calon</th>
+            <th>Tarikh</th>
+            <th>Masa</th>
+            <th>Jawatan</th>
+            
+        </tr>
+        
+            <?php
+            while ($row = mysqli_fetch_array($result)){
+                $idundian = $row['idundian'];
+                $nokppengundi = $row['nokpPengundi'];
+                $idcalon = $row['idcalon'];
+                $tarikh = $row['tarikh'];
+                $masa = $row['masa'];
+                $jawatan = $row['jawatan'];
+                ?>
+            <tr>
+                <td><?php echo $idundian; ?></td>
+                <td><?php echo $nokppengundi; ?></td>
+                <td><?php echo $idcalon; ?></td>
+                <td><?php echo $tarikh; ?></td>
+                <td><?php echo $masa; ?></td>
+                <td><?php echo substr($jawatan, 1); ?></td>
+                <td>
+                    <a href="padamundi.php?idundian=<?php echo $idundian; ?>"><button>Padam </button></a>
+                    
+                </td>
+            </tr>
+                <?php
+            }
+            ?>
+        
+    </table>
 
-<form action='cariundi1.php' method='GET' enctype='multipart/form-data'>
-<table width='35%' align='center'>
-<tr>
-<td align='right'bgcolor='' > Nama Calon </td>
-<td>
-    <select name='idcalon' required>
-    <option disabled selected value>Pilih</option>";
-
-                        //statement SQL untuk memilih semua field yang terdapat didalam table bilik
-                        $query="SELECT * FROM calon ";
-                        $result=mysqli_query($con,$query);
-                        WHILE($data=mysqli_fetch_array($result)){
-                        //while($data=mysqli_fetch_array($sql)){
-                        echo"<option value='".$data['idcalon']."'>".$data['namacalon']."</option>";
-
-                        }
-                    echo"</select>";		
-	?>	
-    <input type="submit" Name="submit" Value="Cari"></p>
-</tr>
 </center>
-
+<?php include("footer.php"); ?>
 
 
 

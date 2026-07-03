@@ -12,7 +12,7 @@ require('confiq.php');
 
 
 if ($rekod) {
-	$message = "Data telah dipadam";
+	$message = "Undian telah dipadam";
 echo "<script type='text/javascript'>alert('$message');</script>";
 	
 	

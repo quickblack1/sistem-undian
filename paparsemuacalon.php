@@ -22,7 +22,7 @@ require('confiq.php');
     while($row1 = mysqli_fetch_array($result1)){
       $jawatan = $row1['jawatan'];
       ?>
-      <h3>Jawatan: <?php echo substr($jawatan, 1); ?></h3>
+      <h3>Jawatan: <?php echo substr($jawatan, 2); ?></h3>
       <table class='table5'>
         <tr>
           <th> <b> ID Calon</b> </td>

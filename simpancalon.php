@@ -5,13 +5,17 @@ require('confiq.php');
 
 // Check if image file is a actual image or fake image
 if(isset($_POST['submit'])) {
-  
-  $filepath = 'gambarcalon/' . $_FILES['gambar']['name'];
-  if(move_uploaded_file($_FILES['gambar']['tmp_name'], $filepath)){
-    echo "";
+  if (isset($_POST['gambar'])){
+    $filepath = $_POST['gambar'];
   } else {
-    echo "<center>Minta maaf, gambar tidak dapat diupload !!</center>";
+    $filepath = 'gambarcalon/' . $_FILES['gambar']['name'];
+    if(move_uploaded_file($_FILES['gambar']['tmp_name'], $filepath)){
+      echo "";
+    } else {
+      echo "<center>Minta maaf, gambar tidak dapat diupload !!</center>";
+    }
   }
+  
   //$gambar = $_FILES['gambar']['name'];
   //$ext=substr(strrchr($_FILES['gambar']['name'],"."),1);
   //$newnamepic=md5(rand()*time()).".$ext";
@@ -29,9 +33,18 @@ if(isset($_POST['submit'])) {
   $result = mysqli_query($con, $semakJawatan);
   $bilRekod = mysqli_num_rows($result);
   if ($bilRekod == 0){
+    
     //masukkan data dalam pangkalan data
-    $sql="INSERT INTO calon VALUES ('$idcalon', '$nokpCalon', '$idadmin','$filepath', '$jawatan')";
+    if ($idadmin != ""){
+      $sql="INSERT INTO calon VALUES ('$idcalon', '$nokpCalon', '$idadmin','$filepath', '$jawatan')";
+    } else {
+      $sql = "INSERT INTO calon (idcalon, nokp, gambar, jawatan) VALUES ('$idcalon', '$nokpCalon', '$filepath', '$jawatan')";
+    }
+    
     $result = mysqli_query($con, $sql);
+    if ($result == 1){
+      
+    }
     ?>
     <h2>STATUS TAMBAH CALON</h2>
     <table class="table5">
@@ -46,7 +59,7 @@ if(isset($_POST['submit'])) {
   } else {
     ?>
     <script>
-      alert("Ahli ini tidak dapat didaftarkan sebagai calon <?php echo $jawatan; ?> kerana telah didaftarkan.");
+      alert("Ahli ini tidak dapat didaftarkan sebagai calon <?php echo substr($jawatan, 2); ?> kerana telah didaftarkan.");
       window.location.href = "paparahli.php?nokp=<?php echo $nokpCalon; ?>";
     </script>
     <?php
