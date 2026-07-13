@@ -1,7 +1,6 @@
-<?php include('header.php'); ?>
 <?php
-//include("menupengundi.php");
 require('confiq.php');
+include('header.php');
 
 $nokp = $_SESSION["nokp"];
 

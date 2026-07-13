@@ -1,4 +1,5 @@
 <?php
+session_start();
 //sambungan mysqli dengan $con
 $con=mysqli_connect("localhost","root","","dbundi");
 if(mysqli_connect_errno()){

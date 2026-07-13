@@ -1,9 +1,7 @@
 <?php
 require('confiq.php');
-
-//include("menupengundi.php");
-?>  
-<?php include('header.php'); ?>
+include('header.php'); 
+?>
 
 
 <div class="div0">
