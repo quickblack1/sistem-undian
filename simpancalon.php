@@ -1,6 +1,7 @@
 <?php
-include("header.php");
 require('confiq.php');
+include("header.php");
+
 
 
 // Check if image file is a actual image or fake image
