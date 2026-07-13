@@ -1,6 +1,6 @@
 <?php
-include('confiq.php');
 session_start();
+include('confiq.php');
 if (isset($_SESSION['nokp'])){
     include('authahli.php');
 } else {

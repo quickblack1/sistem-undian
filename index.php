@@ -1,7 +1,8 @@
     
-    <?php
-    include("header.php");
-    ?>
+<?php
+session_start();
+include("header.php");
+?>
 	<br>
 <div class="div0">
     <img src="imej/vote.png" style="width:150px; height:150px;">

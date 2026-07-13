@@ -45,7 +45,6 @@
       <a class="<?= ($current_page == 'index.php') ? 'active' : '' ?>" href="index.php">HOME</a>
       
       <?php
-        session_start();
         if (isset($_SESSION["nokp"])){
         ?>
           <a href="paparsemuaahli.php" class="<?= ($current_page == 'paparsemuaahli.php') ? 'active' : '' ?>">AHLI</a>

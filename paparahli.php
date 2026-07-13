@@ -9,8 +9,6 @@ if (isset($_SESSION['idadmin'])){
     $idadmin = $_SESSION['idadmin'];
 }
 
-
-
 require('confiq.php');
 $alert = "";
 $namaCalon = "";
@@ -74,8 +72,8 @@ else {
                     $sql = "SELECT * FROM calon WHERE nokp = '$nokp'";
                     $result2 = mysqli_query($con, $sql);
                     $row2 = mysqli_fetch_array($result2);
-                    $gambar = $row2['gambar'];
-                    if (isset($gambar)){
+                    if (isset($row2['gambar'])){
+                        $gambar = $row2['gambar'];
                         ?>
                         <img src="<?php echo $gambar; ?>" alt="" width="100px">
                         <input type="hidden" name="gambar" value="<?php echo $gambar; ?>">
