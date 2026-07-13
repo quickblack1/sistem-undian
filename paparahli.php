@@ -1,5 +1,6 @@
 <?php
 //include auth.php file on all secure pages
+session_start();
 if (isset($_SESSION['nokp'])){
     include("authahli.php");
     $idadmin = NULL;

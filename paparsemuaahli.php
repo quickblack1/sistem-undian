@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('confiq.php');
 ?>
 <?php
