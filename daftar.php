@@ -22,7 +22,7 @@
       if ($rowCount > 0){
       ?>
         <script>
-          alert('Nombor Kad Pengenalan telah wujud.');
+          alert('Pendaftaran tidak berjaya. Nombor Kad Pengenalan telah wujud.');
           window.onload = function() {
             let input = document.getElementById('nokp');
             input.focus();

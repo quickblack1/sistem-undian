@@ -1,14 +1,8 @@
 <?php
-    include("header.php");
-?>
-<tr>
-</tr>
-<tr>
-<center>
-<?php 
 require('confiq.php');
-
+include("header.php");
 ?>
+<center>
 
 <form action='cariadmin1.php' method='GET' enctype='multipart/form-data'>
 <table width='' align='center'>
