@@ -1,5 +1,6 @@
 <?php
-
+//connection
+require('confiq.php');
 include("header.php");
 ?>
 
@@ -12,8 +13,7 @@ include("header.php");
 <?php 
 
 
-//connection
-require('confiq.php');
+
 
 $idcalon = $_GET['idcalon'];
 
