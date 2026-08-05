@@ -109,7 +109,8 @@ function togglePass() {
           <tr>
             <td> No kad pengenalan </td>
             <td>
-              <input type="text" name="nokp" id="nokp" placeholder="No kad pengenalan">
+              <input type="text" name="nokp" id="nokp" placeholder="No kad pengenalan" required><br>
+              <span class="span1">Contoh: 123456789012</span>
               <!-- <input name="nokp" id="nokp" oninput="this.value = this.value.replace(/[^0-9]/g, '')" value="<?php //echo isset($_POST['nokp']) ? htmlspecialchars($_POST['nokp']) : ''; ?>" type="text" placeholder='nokp tanpa -' required> -->
             </td>
           </tr>

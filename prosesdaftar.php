@@ -26,7 +26,14 @@ if ($numRow > 0){
         alert("Ralat, No Kad Pengenalan tidak perlu ada simbol -.");
         window.location.href='daftar.php';
     </script>
-    <?ph
+    <?php
+} elseif (preg_match('/[^a-zA-Z0-9]/', $nokp)){
+    ?>
+    <script>
+        alert("No kad pengenalan ada mempunyai ralat.");
+        window.location.href='daftar.php';
+    </script>
+    <?php
 }
 
 // semak bilangan aksara kata laluan
