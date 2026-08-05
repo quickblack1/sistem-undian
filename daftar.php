@@ -94,7 +94,7 @@ function togglePass() {
 }
 </script>
 <br>
-<form onsubmit="return validateForm()" action="" method="POST">
+<form onsubmit="return validateForm()" action="prosesdaftar.php" method="POST">
   <table class="table2">
     <tr class="">
       <th class="th0"> Selamat Datang</td>
@@ -108,16 +108,19 @@ function togglePass() {
         <table>
           <tr>
             <td> No kad pengenalan </td>
-            <td><input name="nokp" id="nokp" oninput="this.value = this.value.replace(/[^0-9]/g, '')" value="<?php echo isset($_POST['nokp']) ? htmlspecialchars($_POST['nokp']) : ''; ?>" type="text" placeholder='nokp tanpa -' required></td>
+            <td>
+              <input type="text" name="nokp" id="nokp" placeholder="No kad pengenalan">
+              <!-- <input name="nokp" id="nokp" oninput="this.value = this.value.replace(/[^0-9]/g, '')" value="<?php //echo isset($_POST['nokp']) ? htmlspecialchars($_POST['nokp']) : ''; ?>" type="text" placeholder='nokp tanpa -' required> -->
+            </td>
           </tr>
           <tr>
             <td> Nama pengundi </td>
-            <td><input name="namapengundi" id="namapengundi" type="text" oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'').toUpperCase();" value="<?php echo isset($_POST['namapengundi']) ? htmlspecialchars($_POST['namapengundi']) : ''; ?>" placeholder='nama penuh' required></td>
+            <td><input name="namapengundi" id="namapengundi" type="text" oninput="this.value=this.value.replace(/[^A-Za-z\s]/g,'').toUpperCase();" value="<?php echo isset($_POST['namapengundi']) ? htmlspecialchars($_POST['namapengundi']) : ''; ?>" placeholder='Nama penuh' required></td>
           </tr>
           <tr>
             <td>Kata laluan</td>
             <td>
-              <input id="password" name="katalaluanpengundi" type="password" placeholder='kata laluan' required>
+              <input id="password" name="katalaluanpengundi" type="password" placeholder='Kata laluan' required>
               <button class="button0" type="button" onclick="togglePass()">👁</button><br>
               <span id="error" class='span0'></span>
             </td>

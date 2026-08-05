@@ -20,7 +20,15 @@ if ($numRow > 0){
         window.location.href='daftar.php';
     </script>
     <?php
+} elseif (str_contains($nokp, '-')){
+    ?>
+    <script>
+        alert("Ralat, No Kad Pengenalan tidak perlu ada simbol -.");
+        window.location.href='daftar.php';
+    </script>
+    <?ph
 }
+
 // semak bilangan aksara kata laluan
 elseif (strlen($katalaluanpengundi) < 8) {
     ?>
