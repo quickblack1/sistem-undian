@@ -46,8 +46,8 @@ while($row1 = mysqli_fetch_array($result1)){
                 <tr>
                     <td><?php echo $idcalon; ?></td>
                     <td class="td1"><?php echo $namaCalon; ?></td>
-                    <td><?php echo $kelas; ?></td>
-                    <td><?php echo $jumlahUndi; ?></td>
+                    <td class="td2"><?php echo $kelas; ?></td>
+                    <td class="td2"><?php echo $jumlahUndi; ?></td>
                 </tr>
                 <?php
             }
