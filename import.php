@@ -50,16 +50,9 @@ if (isset($_POST['btn-upload'])){
       //mengganggap itu cell yang berikutnya
       while (($getData = fgetcsv($failyangdataingindiupload, 10000, ",")) !== FALSE)
       {
-        $nokp = $getData[0];
-        echo $nokp;
-        $namapengundi = $getData[1];
-        $getData[2];
-        echo $getData[3];
-        echo $getData[4];
-        // exit();
         //memasukkan data ke dalam pangkalan data satu demi satu 
         //$result = mysqli_query($con, "INSERT INTO calon (idcalon,namacalon, idadmin, gambar) VALUES ('".$getData[0]."','".$getData[1]."','".$getData[2]."','".$getData[3]."')");
-        $sql = "INSERT INTO pengundi VALUES ('$getData[0]', '$getData[1]', '$getData[2]', '$getData[3]', '$getData[4]')";
+        $sql = "INSERT INTO calon VALUES ('$getData[0]', '$getData[1]', '$getData[2]', '$getData[3]', '$getData[4]', '$getData[5]')";
         $result = mysqli_query($con, $sql);
         
       } //tutup while
@@ -68,7 +61,7 @@ if (isset($_POST['btn-upload'])){
       //dan kembali ke page import
       <script>
         alert('Import fail data berjaya.');
-        window.location = 'paparsemuaahli.php';
+        window.location = 'paparsemuacalon.php';
       </script>
       <?php  
       fclose($failyangdataingindiupload);	
