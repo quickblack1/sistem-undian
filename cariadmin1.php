@@ -27,7 +27,7 @@ $rekod  = mysqli_fetch_array($result);
 
 $idcalon=$rekod['idcalon'];
 $nokp = $rekod['nokp'];
-$namacalon=$rekod['namapengundi'];
+$namacalon=$rekod['namacalon'];
 $gambar=$rekod['gambar'];
 $idadmin=$rekod['idadmin'];
 $kelas = $rekod['kelas'];

@@ -50,7 +50,10 @@ include('header.php');
           if (isset($_SESSION['idadmin'])){
             $idcalon = $rekod['idcalon'];
           ?>
-            <td><a href="padamcalon.php?idcalon=<?php echo $idcalon; ?>"><button>PADAM</button></a></td>
+            <td>
+              <a href="cariadmin1.php?idcalon=<?php echo $idcalon; ?>"><button>KEMASKINI</button></a><br>
+              <a href="padamcalon.php?idcalon=<?php echo $idcalon; ?>"><button>PADAM</button></a>
+            </td>
           <?php
           }
           ?>
