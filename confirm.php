@@ -25,9 +25,6 @@ $idcalon = $_GET['idcalon'];
 
 
 
-<br><br>
-<center>   
-
-</center>
-</body>
-</html>
+<?php
+include("footer.php");
+?>
