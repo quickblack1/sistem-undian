@@ -28,11 +28,11 @@ include('header.php');
           <th><b>Gambar </b></td>
         </tr>
       <?php
-      $query="SELECT * FROM calon WHERE jawatan = '$jawatan'";
-      // $query = "SELECT calon.*, pengundi.namapengundi, pengundi.kelas
-      // FROM calon
-      // INNER JOIN pengundi ON calon.nokp = pengundi.nokp
-      // WHERE jawatan = '$jawatan'";
+      //$query="SELECT * FROM calon WHERE jawatan = '$jawatan'";
+      $query = "SELECT calon.*, pengundi.namapengundi, pengundi.kelas
+      FROM calon
+      INNER JOIN pengundi ON calon.nokp = pengundi.nokp
+      WHERE jawatan = '$jawatan'";
       $result=mysqli_query($con, $query);
       $bilRekod = mysqli_num_rows($result);
       ?>
@@ -43,7 +43,7 @@ include('header.php');
         <tr align='center'>
           <td><?php echo $rekod["idcalon"]; ?></td>
           <td>
-            <?php echo $rekod["namacalon"]; ?><br>
+            <?php echo $rekod["namapengundi"]; ?><br>
           </td>
           <td><img src='<?php echo $rekod["gambar"]; ?>' width="100px"></td>
           <?php

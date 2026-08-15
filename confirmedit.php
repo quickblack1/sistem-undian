@@ -22,8 +22,8 @@ if(isset($_POST['Submit']))
     if ($rekod) {
         ?>
         <script>
-            alert('kemaskini berjaya'); 
-            window.location.href='paparsemuacalon.php';
+            alert('Kemaskini berjaya'); 
+            window.location.href='cariadmin1.php?idcalon=<?php echo $idcalon; ?>';
         </script>
         <?php
     }

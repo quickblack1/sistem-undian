@@ -6,9 +6,6 @@ include("header.php");
 
 <center>
 <h3>KEMASKINI CALON</h3>
-========================<br><br>
-
-
 
 <?php 
 $idcalon = $_GET['idcalon'];
@@ -26,7 +23,7 @@ $rekod  = mysqli_fetch_array($result);
 
 $idcalon=$rekod['idcalon'];
 $nokp = $rekod['nokp'];
-$namacalon=$rekod['namacalon'];
+$namacalon=$rekod['namapengundi'];
 $gambar=$rekod['gambar'];
 $idadmin=$rekod['idadmin'];
 $kelas = $rekod['kelas'];
@@ -52,7 +49,7 @@ $numRow = mysqli_num_rows($result2);
     </tr>
     <tr>
       <th> No. KP Calon </th>
-      <td> <input type="text" name="nokp" disabled value= '<?php echo $nokp; ?>'> </td>
+      <td> <input type="text" name="nokp" value= '<?php echo $nokp; ?>'> </td>
     </tr>
     <tr>
       <th> Nama Calon </th>
@@ -76,7 +73,13 @@ $numRow = mysqli_num_rows($result2);
     </tr>
     <tr>
       <th>Dicalonkan Oleh</th>
-      <td> <input type="text" name="idadmin" disabled value= '<?php echo $idadmin; ?>'> </td>
+      <?php
+      $sql3 = "SELECT * FROM admin WHERE idadmin = '$idadmin'";
+      $result3 = mysqli_query($con, $sql3);
+      $row3 = mysqli_fetch_array($result3);
+      $namaadmin = $row3['namaadmin'];
+      ?>
+      <td><?php echo $namaadmin; ?></td>
     </tr>
     <tr>
       

@@ -21,6 +21,13 @@ if ($numRow > 0){
         window.location.href='daftar.php';
     </script>
     <?php
+} elseif (strlen($nokp) > 12){
+    ?>
+    <script>
+        alert("Ralat, No Kad Pengenalan tidak perlu ada simbol -.");
+        window.location.href='daftar.php';
+    </script>
+    <?php
 } elseif (str_contains($nokp, '-')){
     ?>
     <script>
