@@ -13,8 +13,7 @@ include("header.php");
 <?php 
 $idcalon = $_GET['idcalon'];
 
- //get the idpelajar which will updated
-
+//get the idpelajar which will updated
 $query="SELECT calon.*, pengundi.namapengundi, pengundi.kelas
         FROM calon
         LEFT JOIN pengundi
@@ -32,16 +31,10 @@ $gambar=$rekod['gambar'];
 $idadmin=$rekod['idadmin'];
 $kelas = $rekod['kelas'];
 
-//$result=mysqli_query($conn, $query);
-//WHILE($rekod=mysqli_fetch_array($result))
-
-
-        $sql2 = "SELECT kelas FROM pengundi GROUP BY kelas ORDER BY kelas";
-        $result2 = mysqli_query($con, $sql2);
-        $numRow = mysqli_num_rows($result2);
+$sql2 = "SELECT kelas FROM pengundi GROUP BY kelas ORDER BY kelas";
+$result2 = mysqli_query($con, $sql2);
+$numRow = mysqli_num_rows($result2);
         
-      
-
 ?>
 <form method="GET" action="proseseditadmin.php">
   <input type="hidden" name="idcalon" value='<?php echo $idcalon; ?>' >
