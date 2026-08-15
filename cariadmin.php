@@ -15,8 +15,8 @@ include("header.php");
             //statement SQL untuk memilih semua field yang terdapat didalam table bilik
             $query="SELECT calon.*, pengundi.namapengundi
                     FROM calon 
-                    INNER JOIN pengundi
-                    ON calon.nokp = pengundi.nokp";
+                    INNER JOIN pengundi ON calon.nokp = pengundi.nokp
+                    ORDER BY calon.jawatan";
             $result=mysqli_query($con,$query);
             while($data=mysqli_fetch_array($result)){
                 $idcalon = $data['idcalon'];
