@@ -1,13 +1,9 @@
 <?php 
-
 //connection
 require('confiq.php');
-session_start();
 
 $idadmin = $_POST['idadmin'];
-
 $katalaluanadmin = $_POST['katalaluanadmin'];
-
 
 $rekod=mysqli_query($con, "Select * from admin where idadmin='$idadmin' and katalaluanadmin='$katalaluanadmin'");
 $hasil=mysqli_num_rows($rekod);
@@ -19,15 +15,19 @@ if ($hasil==1){
 	
 	// Redirect user to index.php
  	$message = "Katalaluan anda sah";
-	echo "<script type='text/javascript'>alert('$message');</script>";
-	
-	
+	?>
+	<script type='text/javascript'>
+		alert('<?php echo $message; ?>');
+	</script>";
+	<?php
 	header('Location: index.php');
 } else {
 	$message1 = "Katalaluan anda tidak sah";
-	echo "<script type='text/javascript'>alert('$message1');</script>";
-	
-	
+	?>
+	<script type='text/javascript'>
+		alert('<?php echo $message1; ?>');
+	</script>"
+	<?php
 	header('refresh:1;URL=./logmasukadmin.php');
 }
 ?>

@@ -6,6 +6,7 @@ require('confiq.php');
 $nokp=$_POST['nokp'];
 $namapengundi=$_POST['namapengundi'];
 $katalaluanpengundi=$_POST['katalaluanpengundi'];
+$jantina = $_POST['jantina'];
 $kelas = $_POST['kelas'];
 
 // semak kalau nokp telah didaftarkan atau belum
@@ -47,7 +48,7 @@ elseif (strlen($katalaluanpengundi) < 8) {
     <?php
     $alert =  "Password mesti sekurang-kurangnya 8 karakter!";
 } else {
-    $query="INSERT INTO pengundi (nokp, namapengundi, katalaluanpengundi, kelas) VALUES ('$nokp', '$namapengundi', '$katalaluanpengundi', '$kelas');";
+    $query="INSERT INTO pengundi (nokp, namapengundi, katalaluanpengundi, jantina, kelas) VALUES ('$nokp', '$namapengundi', '$katalaluanpengundi', '$jantina', '$kelas');";
     //run query
     if(mysqli_query($con,$query)){
         echo"<script>alert('Pendaftaran Anda Berjaya'); window.location.href='logmasuk.php'; </script>";

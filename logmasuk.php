@@ -1,11 +1,10 @@
 	<?php
+	//connection
+		require('confiq.php');
       	include("header.php");
 
 		if (isset($_POST['submit'])){
 			
-			//connection
-			require('confiq.php');
-			session_start();
 			$nokp = $_POST['nokp'];
 			$katalaluanpengundi = $_POST['katalaluanpengundi'];
 
@@ -19,16 +18,14 @@
 				$message = "Katalaluan anda sah";
 				echo "<script type='text/javascript'>alert('$message');</script>";
 				
-				//header('refresh:1;URL=./menupengundi.php');
 				header('Location: index.php');
-			}
+			} 
 			else
 			{
 				$message1 = "Katalaluan anda tidak sah";
 				echo "<script type='text/javascript'>alert('$message1');</script>";
-				//echo "<h4> Katalaluan tidak sah, sila cuba sekali lagi</h4>";
-				//include "logmasuk.php";
-				header('refresh:1;URL=./logmasuk.php');
+				
+				header('logmasuk.php');
 				
 			}
 		}
