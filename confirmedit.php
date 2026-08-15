@@ -1,6 +1,6 @@
 <?php
-include("menuadmin.php");
 require('confiq.php');
+include("menuadmin.php");
 ?>
 
     <?php
