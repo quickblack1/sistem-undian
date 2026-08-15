@@ -1,4 +1,5 @@
 <?php
+//membuat connection kepada pangkalan data kerana akan menggunakan statement SQL
 require('confiq.php');
 include("header.php");
 ?>
@@ -25,9 +26,6 @@ enctype='multipart/form-data'>
 //menyemak samada terdapat fail yang dihantar melalui post. ini bertujuan bagi mengelakkan
 //ralat pada kali pertama fail import dibuka.
 if (isset($_POST['btn-upload'])){
-  //membuat connection kepada pangkalan data kerana akan menggunakan statement SQL
-  //include('confiq.php');
-
   //sambungan mysqli dengan $con
   $con=mysqli_connect("localhost","root","","dbundi");
   if(mysqli_connect_errno()){
@@ -51,8 +49,7 @@ if (isset($_POST['btn-upload'])){
       while (($getData = fgetcsv($failyangdataingindiupload, 10000, ",")) !== FALSE)
       {
         //memasukkan data ke dalam pangkalan data satu demi satu 
-        //$result = mysqli_query($con, "INSERT INTO calon (idcalon,namacalon, idadmin, gambar) VALUES ('".$getData[0]."','".$getData[1]."','".$getData[2]."','".$getData[3]."')");
-        $sql = "INSERT INTO calon VALUES ('$getData[0]', '$getData[1]', '$getData[2]', '$getData[3]', '$getData[4]', '$getData[5]')";
+        $sql = "INSERT INTO ahli VALUES ('$getData[0]', '$getData[1]', '$getData[2]', '$getData[3]', '$getData[4]')";
         $result = mysqli_query($con, $sql);
         
       } //tutup while
