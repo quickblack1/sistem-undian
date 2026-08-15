@@ -1,6 +1,6 @@
 <?php
 require('confiq.php');
-include("menuadmin.php");
+include("header.php");
 
 if(isset($_POST['Submit']))
 { 
@@ -21,7 +21,10 @@ if(isset($_POST['Submit']))
     $rekod=mysqli_query($con,$query);
     if ($rekod) {
         ?>
-        <script>alert('kemaskini berjaya'); window.location.href='paparsemuacalon.php'; </script>
+        <script>
+            alert('kemaskini berjaya'); 
+            window.location.href='paparsemuacalon.php';
+        </script>
         <?php
     }
 }
