@@ -45,7 +45,7 @@ $numRow = mysqli_num_rows($result2);
     </tr>
     <tr>
       <th> Id Calon </th>
-      <td> <input type="text" name="idcalon" disabled value= '<?php echo $idcalon; ?>'> </td>
+      <td><b><?php echo $idcalon; ?></b></td>
     </tr>
     <tr>
       <th> No. KP Calon </th>
