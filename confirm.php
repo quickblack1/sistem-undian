@@ -1,6 +1,7 @@
 <?php
-include("menuadmin.php");
 require('confiq.php');
+include("menuadmin.php");
+
 $idcalon = $_GET['idcalon'];
 ?>
 
